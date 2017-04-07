@@ -56,6 +56,12 @@ class EventController extends Controller
         return view('event.venue-album')->with([ 'images' => $images ]);
     }
 
+    public function hotel()
+    {
+        $image = 'images/hotel.jpg';
+        return view('event.hotel')->with([ 'image' => $image ]);
+    }
+
     public function sortByStartTime($timeSlots, $label)
     {
         $sorted = [];
@@ -76,6 +82,14 @@ class EventController extends Controller
                 'image' => 'images/venue/kane_hall.jpg',
                 'alt' => 'Kane Hall building from across a brick paved courtyard and set against clear blue sky.  Building front consists of 10 columns.  The height of the hall is angled with the higher side on the right in the image.  To the left of the building is a tower.'
                 ],
+            'freespace' => [
+                'image' => 'images/venue/freespace.jpg',
+                'alt' => "Kane Hall building interior open area outside the auditorium. This is where you will find event refreshments, organizers, and vendor booths. There will also be space here to take rest breaks from talks and indulge with others in the 'hallway track'."
+            ],
+            'vending' => [
+                'image' => 'images/venue/vending.jpg',
+                'alt' => "Vending machines in the open area, in case you'd like to supplement event refreshments."
+            ],
             1 => [
                 'image' => 'images/venue/auditorium1.jpg',
                 'alt' => "Kane Hall's 120 auditorium interior from several steps behind the speaker's podium in the lower right of the frame and focused across and up the 440 empty seats to the opposite corner."

@@ -1,16 +1,5 @@
 @extends('layouts.right-sidebar')
 
-@section('styles')
-    @parent
-    <link href="{{ asset('css/carousel.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/carousel-theme.min.css') }}" rel="stylesheet">
-@endsection
-
-@section('scripts')
-    @parent
-    <script src="{{ asset('js/carousel.min.js') }}"></script>
-@endsection
-
 @section('main-title')
     Washington University's Kane Hall
 @endsection
@@ -35,7 +24,7 @@
         <p>This year we are launching a new <a href="{{ url('guides') }}">Event Guide</a> program to make sure everyone can access the support and assistance they need to feel comfortable and confident during the conference.</p>
         <p>Whether you are someone who might benefit from event guides, or someone who might find it rewarding to be one, we hope you will take a look at the program and get involved.</p>
         <footer>
-            <a href="{{ url('guides') }}" target="_blank" class="button icon fa-info-circle">Find out more</a>
+            <a href="{{ url('guides') }}" class="button icon fa-info-circle">Find out more</a>
         </footer>
     </section>
 
