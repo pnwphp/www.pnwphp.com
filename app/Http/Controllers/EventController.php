@@ -49,7 +49,7 @@ class EventController extends Controller
     {
         $sorted = [];
         foreach ($timeSlots as $slot) {
-            $key = $slot->start_time;
+            $key = str_replace(':', '', $slot->start_time);
             $sorted[$key.$label.$slot->id] = $slot;
         }
         asort($sorted);

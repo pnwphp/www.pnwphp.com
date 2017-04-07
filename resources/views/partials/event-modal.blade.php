@@ -20,10 +20,22 @@
     @foreach($dayEvents as $tag => $event)
         <div class="event-info hidden" id="{{ $tag }}">
             <div>
-                <header>
-                    <h2>{{ $tag }}: {{ $event->name }}</h2>
-                </header>
-                <p>{{ $event->desc }}</p>
+                @if(strpos($tag,'event') !== false)
+                    <header>
+                        <h2>{{ $tag }}: {{ $event->name }}</h2>
+                    </header>
+                    <p>{{ $event->desc }}</p>
+                @else
+                    <header>
+                        <h2>{{ $tag }}: {{ $event->name }}</h2>
+                        <p>with <strong>{{ $event->speaker->name }}</strong></p>
+                    </header>
+                    <p>{{ $event->desc }}<br/><br/>
+
+                    Category: {{ $event->getCategory() }}<br/>
+                    Level: {{ ucfirst($event->level) }}
+                    </p>
+                @endif
             </div>
         </div>
     @endforeach
