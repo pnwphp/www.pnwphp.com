@@ -1,0 +1,6 @@
+
+<p>It's important to us that all of our speakers and attendees be able to enjoy the event as a safe and welcoming environment.</p>
+<p>If you are new to conferences, have any concerns about getting around inside the event space -- such as finding restrooms or elevators--, and/or would feel more comfortable and confident having someone accompany you, we encourage you to select to be contacted by our Event Guide program in your registration.</p>
+<p>If you have already registered without selecting that option, please get in touch with us by emailing guides@pnwphp.org and if you don't realize you would like a guide until the day of the event, mention it to an organizer or event helper and we will get you connected to our guides.</p>
+<p>If you are a confident knowledgeable conference goer who would like to help us insure that everyone at our event is made safe and welcome, select to sign up to be an event guide in your registration, and depending on need we will be in touch to discuss training for that role.</p>
+<p>If you have already registered without selecting that option, please get in touch with us by emailing guides@pnwphp.org and we'll let you know if we need more guides and how to get started with training.</p>

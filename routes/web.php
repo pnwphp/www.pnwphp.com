@@ -19,6 +19,7 @@ Route::get('community', 'HomeController@community');
 Route::get('speakers', 'EventController@speakers');
 Route::get('schedule', 'EventController@schedule');
 Route::get('venue', 'EventController@venue');
+Route::get('venue/album', 'EventController@venueAlbum');
 Route::get('hotel', 'EventController@hotel');
 
 Route::group(
