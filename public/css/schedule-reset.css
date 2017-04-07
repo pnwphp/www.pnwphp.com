@@ -1,0 +1,32 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* HTML5 display-role reset for older browsers */
+div.schedule article,
+div.schedule aside,
+div.schedule details,
+div.schedule figcaption,
+div.schedule figure,
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+div.schedule {
+	line-height: 1;
+}
+div.schedule ol, div.schedule ul {
+	list-style: none;
+}
+div.schedule blockquote, div.schedule q {
+	quotes: none;
+}
+div.schedule blockquote:before, div.schedule blockquote:after,
+div.schedule q:before, div.schedule q:after {
+	content: '';
+	content: none;
+}
+div.schedule table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
