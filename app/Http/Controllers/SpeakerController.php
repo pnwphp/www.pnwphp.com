@@ -20,8 +20,8 @@ class SpeakerController extends Controller
     public function getEditSpeaker()
     {
         $user = \Auth::user();
-        $speaker = $user->speaker();
-        $talks = $speaker->talks();
+        $speaker = $user->speaker;
+        $talks = $speaker->talks;
 
         return view('admin.form.speaker')->with([
             'speaker' => $speaker,

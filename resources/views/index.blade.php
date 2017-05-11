@@ -40,6 +40,6 @@
     @if(config('app.registration'))
         <li><a href="#" class="button">Get Your Ticket</a></li>
     @else
-        <a href="#" class="button disabled">Registration Opens config('app.registration_date')</a>
+        <a href="#" class="button disabled">Registration Opens {{ config('app.registration_date') }}</a>
     @endif
 @endsection

@@ -38,8 +38,8 @@ Route::group(
     Route::get('index', 'SpeakerController@index');
     Route::group(['prefix' => 'admin/', 'middleware' => ['auth', 'auth.admin:speaker'] ], function ()
     {
-        Route::get('', 'SpeakerController@editSpeaker');
-        Route::post('', 'SpeakerController@editSpeaker');
+        Route::get('', 'SpeakerController@getEditSpeaker');
+        Route::post('', 'SpeakerController@postEditSpeaker');
     });
 });
 
@@ -51,8 +51,8 @@ Route::group(
     Route::post('submit', 'SponsorController@postNewSponsorForm')->name('post_sponsor_form');
     Route::group(
         ['prefix' => 'admin/', 'middleware' => ['auth', 'auth.admin:sponsor'] ], function () {
-        Route::get('{?sponsorID}', 'SponsorController@editSponsor');
-        Route::post('{sponsorID}', 'SponsorController@editSponsor');
+        Route::get('{sponsorID?}', 'SponsorController@getEditSponsor');
+        Route::post('{sponsorID}', 'SponsorController@postEditSponsor');
     });
 });
 

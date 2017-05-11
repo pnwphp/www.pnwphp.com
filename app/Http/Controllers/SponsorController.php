@@ -86,10 +86,13 @@ class SponsorController extends Controller
     {
         $user = \Auth::user();
         if ($sponsorID == null) {
-            $sponsors = $user->sponsors();
-            return view('sponsors.select')->with('sponsors', $sponsors);
+            $sponsors = $user->sponsors;
+            if (count($sponsors) > 1) {
+                return view('sponsors.select')->with('sponsors', $sponsors);
+            }
+            $sponsorID = $user->sponsors()->first()->id;
         }
-        $sponsor = $user->sponsors()->where('id', $sponsorID);
+        $sponsor = $user->sponsors()->where('sponsor_id', $sponsorID)->first();
         if (!$sponsor) {
             // @TODO error handling
         }
