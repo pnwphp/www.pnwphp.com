@@ -1,6 +1,6 @@
 @php
     if (!isset($current)) {
-        $current = 'welcome';
+        $current = '';
     }
 @endphp
 
@@ -27,7 +27,6 @@
             </ul>
         </li>
         <li @if($current == 'guides')class="current"@endif><a href="{{ url('guides') }}">Event Guides</a></li>
-        <li @if($current == 'community')class="current"@endif><a href="{{ url('community') }}">Community</a></li>
         <li @if($current == 'sponsors')class="current"@endif><a href="{{ url('sponsors') }}">Sponsors</a></li>
     </ul>
 </nav>

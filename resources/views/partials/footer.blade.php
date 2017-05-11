@@ -68,7 +68,11 @@
     <div class="12u">
         <div id="copyright">
             <ul class="menu">
-                <li>&copy; PNWPHP</li>
+                @if(Auth::check())
+                    <li>&copy; PNWPHP <a href="{{ url('logout') }}"><i class="fa fa-key"></i></a></li>
+                @else
+                    <li>&copy; PNWPHP <a href="{{ url('login') }}"><i class="fa fa-key"></i></a></li>
+                @endif
             </ul>
         </div>
     </div>

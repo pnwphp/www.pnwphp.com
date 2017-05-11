@@ -48,6 +48,10 @@
 		-webkit-text-size-adjust: none;
 	}
 
+	div.close p {
+		margin-bottom: 0px;
+	}
+
 	#logo {
 		width: 150px;
         max-width: 33%;
@@ -60,6 +64,84 @@
     .hidden {
         display:none;
     }
+
+/* Bootstrap Alerts */
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+.alert h4 {
+	margin-top: 0;
+	color: inherit;
+}
+.alert .alert-link {
+	font-weight: bold;
+}
+.alert > p,
+.alert > ul {
+	margin-bottom: 0;
+}
+.alert > p + p {
+	margin-top: 5px;
+}
+.alert-dismissable,
+.alert-dismissible {
+	padding-right: 35px;
+}
+.alert-dismissable .close,
+.alert-dismissible .close {
+	position: relative;
+	top: -2px;
+	right: -21px;
+	color: inherit;
+}
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+.alert-success hr {
+	border-top-color: #c9e2b3;
+}
+.alert-success .alert-link {
+	color: #2b542c;
+}
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+.alert-info hr {
+	border-top-color: #a6e1ec;
+}
+.alert-info .alert-link {
+	color: #245269;
+}
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+.alert-warning hr {
+	border-top-color: #f7e1b5;
+}
+.alert-warning .alert-link {
+	color: #66512c;
+}
+.alert-danger {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+.alert-danger hr {
+	border-top-color: #e4b9c0;
+}
+.alert-danger .alert-link {
+	color: #843534;
+}
 
 /* Box Model */
 
@@ -1466,7 +1548,7 @@
 	form label {
 		display: block;
 		font-weight: 800;
-		margin: 0 0 1em 0;
+		margin: 0.75em 0 0.1em 0;
 		font-size: 0.8em;
 		color: #444;
 	}
@@ -1704,6 +1786,11 @@
 			padding: 0.8em 0.9em;
 		}
 
+	.button-medium {
+		font-size: 1em;
+		padding: 0.3em 0.75em;
+	}
+
 /* List */
 
 	ul.default {
@@ -1882,6 +1969,12 @@
 		background: #fff;
 		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
 		padding: 5em 0 5em 0;
+	}
+
+	#alt-main-wrapper {
+		background: #fff;
+		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
+		padding: 2.5em 0 2.5em 0;
 	}
 
 	#footer-wrapper {

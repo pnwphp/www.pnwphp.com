@@ -12,7 +12,7 @@ class SponsorsTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < rand(3, 6); $i++) {
+        for($i = 0; $i < rand(8, 20); $i++) {
             factory(App\Models\Sponsor::class)->create();
         }
     }

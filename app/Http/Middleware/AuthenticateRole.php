@@ -15,10 +15,11 @@ class AuthenticateRole
      * @return mixed
      * @internal param null|string $guard
      */
-    public function handle($request, Closure $next, $roleName)
+    public function handle($request, Closure $next, $roleName = 'admin')
     {
         $user = \Auth::user();
-        if (!$user->isAdmin()) {
+        if (!$user->isAdmin() && !$user->hasRole($roleName)
+        ) {
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 401);
             } else {

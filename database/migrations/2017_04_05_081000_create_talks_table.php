@@ -20,11 +20,6 @@ class CreateTalksTable extends Migration
             $table->string('designation');
             $table->string('level');
             $table->string('category');
-            $table->integer('speaker_id')->unsigned();
-            $table->foreign('speaker_id')
-                ->references('id')
-                ->on('speakers')
-                ->onDelete('cascade');
             $table->string('day');
             $table->string('start_time');
             $table->string('end_time');

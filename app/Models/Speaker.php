@@ -1,13 +1,16 @@
 <?php namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Speaker extends Model
+class Speaker extends BaseModel
 {
     protected $fillable = ['name', 'image', 'desc'];
 
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
     public function talks()
     {
-        return $this->hasMany('App\Models\Talk');
+        return $this->belongsToMany('App\Models\Talk');
     }
 }

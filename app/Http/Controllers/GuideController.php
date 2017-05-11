@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class GuideController extends Controller
 {
+
+    public function __construct()
+    {
+        \View::share('current', 'guides');
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -13,6 +19,6 @@ class GuideController extends Controller
      */
     public function index()
     {
-        return view('index');
+        return view('guides.index');
     }
 }

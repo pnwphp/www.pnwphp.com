@@ -15,7 +15,7 @@ class HomeController extends Controller
         // 3 random Speakers
         // image, name, desc
         $features = Talk::inRandomOrder()->take(3)->get();
-        return view('index')->with(['features' => $features]);
+        return view('index')->with(['features' => $features, 'current' => 'welcome']);
     }
 
     public function contact()
@@ -23,8 +23,30 @@ class HomeController extends Controller
         return view('index');
     }
 
-    public function community()
+    public function home()
     {
-        return view('index');
+        if (\Auth::user()->isAdmin()) {
+            return redirect()->action('AdminController@index');
+        }
+
+        if (\Auth::user()->hasRole('sponsor')) {
+            return redirect()->action('SponsorController@getEditSponsor');
+        }
+
+        if (\Auth::user()->hasRole('speaker')) {
+            return redirect()->action('SpeakerController@getEditSpeaker');
+        }
+
+        return redirect()->action('HomeController@index');
+    }
+
+    public function postEditSpeaker($speakerID)
+    {
+
+    }
+
+    public function getEditSpeaker($speakerID = null)
+    {
+
     }
 }

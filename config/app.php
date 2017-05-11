@@ -126,6 +126,23 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Event Stage Config
+    |--------------------------------------------------------------------------
+    |
+    | These settings determine what content is shown for the event
+    |
+    */
+
+    'sponsorship' => env('EVENT_SPONSOR', 'true'),
+
+    'cfp' => env('EVENT_CFP', 'true'),
+
+    'registration' => env('EVENT_REGISTER', 'true'),
+
+    'registration_date' => env('EVENT_REGISTER_DATE', 'Soon'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
     |
@@ -167,6 +184,8 @@ return [
          * Package Service Providers...
          */
         Ultraware\Roles\RolesServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -223,6 +242,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

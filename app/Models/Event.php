@@ -1,9 +1,6 @@
 <?php namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Event extends Model
+class Event extends BaseModel
 {
     protected $fillable = [ 'name', 'desc', 'start_time', 'end_time', 'day' ];
-
 }

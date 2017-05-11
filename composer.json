@@ -7,10 +7,11 @@
     "require": {
         "php": "7.1.*",
         "laravel/framework": "5.4.*",
-        "laracasts/flash": "^2.0",
+        "laracasts/flash": "^3.0",
         "laravelcollective/html": "^5.3.0",
         "nesbot/carbon": "^1.21",
-        "ultraware/roles": "5.4.*"
+        "ultraware/roles": "5.4.*",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

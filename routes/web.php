@@ -13,27 +13,17 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('index', 'HomeController@index');
-Route::get('contact', 'HomeController@contact');
-Route::get('community', 'HomeController@community');
+Route::get('contact/{about?}', 'HomeController@contact');
+Route::get('home', 'HomeController@home');
 
-Route::get('speakers', 'EventController@speakers');
 Route::get('schedule', 'EventController@schedule');
 Route::get('venue', 'EventController@venue');
 Route::get('venue/album', 'EventController@venueAlbum');
 Route::get('hotel', 'EventController@hotel');
 
 Route::group(
-    ['prefix' => 'admin/', 'middleware' => ['auth', 'auth.admin'] ], function () {
-    Route::get('index', 'AdminController@index');
-});
-
-Route::group(
-    ['prefix' => 'sponsor/' ], function () {
-    Route::get('index', 'SponsorController@index');
-});
-
-Route::group(
-    ['prefix' => 'guide/' ], function () {
+    ['prefix' => 'guides/' ], function () {
+    Route::get('', 'GuideController@index');
     Route::get('index', 'GuideController@index');
 });
 
@@ -42,15 +32,71 @@ Route::group(
     Route::get('index', 'ArchiveController@index');
 });
 
+Route::group(
+    ['prefix' => 'speakers/'], function () {
+    Route::get('', 'SpeakerController@index');
+    Route::get('index', 'SpeakerController@index');
+    Route::group(['prefix' => 'admin/', 'middleware' => ['auth', 'auth.admin:speaker'] ], function ()
+    {
+        Route::get('', 'SpeakerController@editSpeaker');
+        Route::post('', 'SpeakerController@editSpeaker');
+    });
+});
+
+Route::group(
+    ['prefix' => 'sponsors/' ], function () {
+    Route::get('index', 'SponsorController@index');
+    Route::get('', 'SponsorController@index');
+    Route::get('new', 'SponsorController@getNewSponsorForm')->name('get_sponsor_form');
+    Route::post('submit', 'SponsorController@postNewSponsorForm')->name('post_sponsor_form');
+    Route::group(
+        ['prefix' => 'admin/', 'middleware' => ['auth', 'auth.admin:sponsor'] ], function () {
+        Route::get('{?sponsorID}', 'SponsorController@editSponsor');
+        Route::post('{sponsorID}', 'SponsorController@editSponsor');
+    });
+});
+
 // Registration should not currently be available
-// Include Auth routes only as needed for generated admin accounts
+// Include Auth routes only as needed for generated admin, speaker, and sponsor accounts
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('logout', 'Auth\LoginController@logout');
 Route::group(
     ['prefix' => 'password/' ], function () {
     Route::get('reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
     Route::post('email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     Route::get('reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('reset', 'Auth\ResetPasswordController@reset');
+});
+
+Route::group(
+    ['prefix' => 'admin/', 'middleware' => ['auth', 'auth.admin'] ], function () {
+    Route::get('index', 'AdminController@index');
+    Route::get('', 'AdminController@index');
+
+    Route::get('speaker', 'AdminController@newSpeaker');
+    Route::get('speaker/{id}', 'AdminController@getSpeaker');
+    Route::post('speaker', 'AdminController@postSpeaker');
+    Route::post('speaker/add_user', 'AdminController@addUserToSpeaker');
+    Route::post('speaker/remove_user', 'AdminController@removeUserFromSpeaker');
+    Route::post('speaker/delete', 'AdminController@deleteSpeaker');
+
+    Route::get('talk', 'AdminController@newTalk');
+    Route::get('talk/{id}', 'AdminController@getTalk');
+    Route::post('talk', 'AdminController@postTalk');
+    Route::post('talk/add_speaker', 'AdminController@addSpeakerToTalk');
+    Route::post('talk/remove_speaker', 'AdminController@removeSpeakerFromTalk');
+    Route::post('talk/delete', 'AdminController@deleteTalk');
+
+    Route::get('sponsor', 'AdminController@newSponsor');
+    Route::get('sponsor/{id}', 'AdminController@getSponsor');
+    Route::post('sponsor', 'AdminController@postSponsor');
+    Route::post('sponsor/add_user', 'AdminController@addUserToSponsor');
+    Route::post('sponsor/remove_user', 'AdminController@removeUserFromSponsor');
+    Route::post('sponsor/delete', 'AdminController@deleteSponsor');
+
+    Route::get('event', 'AdminController@newEvent');
+    Route::get('event/{id}', 'AdminController@getEvent');
+    Route::post('event', 'AdminController@postEvent');
 });

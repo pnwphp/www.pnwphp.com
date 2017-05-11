@@ -16,10 +16,14 @@ class CreateSponsorsTable extends Migration
         Schema::create('sponsors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('contact');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('website');
             $table->string('image');
             $table->longText('desc');
             $table->string('level');
-            $table->boolean('active');
+            $table->boolean('active')->default(false);
             $table->timestamps();
         });
     }

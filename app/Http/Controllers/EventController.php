@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
-use App\Models\Speaker;
 use App\Models\Talk;
-use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+    public function __construct()
+    {
+        \View::share('current', 'event');
+        parent::__construct();
+    }
+
     /**
      * Show the application dashboard.
      * @return \Illuminate\Http\Response
@@ -18,17 +22,9 @@ class EventController extends Controller
         return view('index');
     }
 
-    public function speakers()
-    {
-        $speakers = Speaker::inRandomOrder()->get();
-        return view('event.speakers')->with(['speakers' => $speakers]);
-    }
-
     public function schedule()
     {
-        $days = [
-            'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
-        ];
+        $days = $this->days;
 
         $schedule = [];
         foreach ($days as $day) {

@@ -74,7 +74,8 @@ $factory->define(App\Models\Talk::class, function (Faker\Generator $faker) {
 $factory->define(App\Models\Event::class, function (Faker\Generator $faker) {
     return [
         'name' => title_case($faker->sentence),
-        'desc' => $faker->paragraph
+        'desc' => $faker->paragraph,
+        'location' => $faker->address
     ];
 });
 
@@ -89,9 +90,13 @@ $factory->define(App\Models\Sponsor::class, function (Faker\Generator $faker) {
     $level = array_rand($level);
     return [
         'name' => $faker->company,
+        'contact' => $faker->name,
+        'email' => $faker->email,
+        'phone' => $faker->phoneNumber,
+        'website' => $faker->domainName,
         'image' => 'images/sponsors/'.getRandomImage(),
         'desc' => $faker->paragraph,
         'level' => $level,
-        'active' => true
+        'active' => rand(0,1)
     ];
 });

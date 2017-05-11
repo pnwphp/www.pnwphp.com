@@ -1,8 +1,6 @@
 <?php namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Talk extends Model
+class Talk extends BaseModel
 {
     protected $fillable = [ 'name', 'desc', 'designation', 'category', 'level', 'start_time', 'end_time', 'day' ];
 
@@ -28,13 +26,22 @@ class Talk extends Model
         "design" => "Usability & Design",
     ];
 
-    public function speaker()
+    public function speakers()
     {
-        return $this->belongsTo('App\Models\Speaker');
+        return $this->belongsToMany('App\Models\Speaker');
     }
 
     public function getCategory()
     {
         return $this->categories[$this->category];
+    }
+
+    public function getImage()
+    {
+        if (count($this->speakers) > 0) {
+            $speaker = $this->speakers()->inRandomOrder()->first();
+            return $speaker->image;
+        }
+        return 'images/pic0'.rand(1,7).'.jpg';
     }
 }

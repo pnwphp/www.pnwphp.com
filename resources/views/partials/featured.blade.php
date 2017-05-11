@@ -2,11 +2,13 @@
 
     <!-- Box -->
     <section class="box feature">
-        <a href="#" class="image featured"><img src="{{ asset($feature->speaker->image) }}" alt="" /></a>
+        <a href="#" class="image featured"><img src="{{ asset($feature->getImage()) }}" alt="" style="width:100%;"/></a>
         <div class="inner">
             <header>
                 <h2>{{ $feature['name'] }}</h2>
-                <p>--{{ $feature->speaker->name }}</p>
+                @foreach($feature->speakers as $speaker)
+                <p>--{{ $speaker->name }}</p>
+                @endforeach
             </header>
             <p>{{ $feature['desc'] }}</p>
         </div>

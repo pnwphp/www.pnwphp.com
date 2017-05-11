@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Ultraware\Roles\Models\Role;
+use App\Models\Talk;
+use App\Models\Speaker;
 
 class TalksTableSeeder extends Seeder
 {
@@ -20,7 +22,6 @@ class TalksTableSeeder extends Seeder
             for($i = $start; $i < 20; $i += rand(1,2)) {
                 if (rand(0,1)) {
                     factory(App\Models\Talk::class)->create([
-                        'speaker_id' => App\Models\Speaker::inRandomOrder()->first()->id,
                         'day' => $day,
                         'start_time' => $i.':00',
                         'end_time' => $i+1 . ':00'
@@ -31,6 +32,16 @@ class TalksTableSeeder extends Seeder
                         'start_time' => $i.':00',
                         'end_time' => $i+1 . ':00'
                     ]);
+                }
+            }
+        }
+        $talks = Talk::all();
+        $speakerCount = [1,1,1,1,1,2,3];
+        foreach ($talks as $talk) {
+            for ($i = 1; $i <= array_rand($speakerCount); $i++) {
+                $speaker = Speaker::inRandomOrder()->first();
+                if (empty($talk->speakers()->find($speaker->id))) {
+                    $talk->speakers()->attach($speaker);
                 }
             }
         }

@@ -24,11 +24,14 @@
                     <header>
                         <h2>{{ $tag }}: {{ $event->name }}</h2>
                     </header>
+                    <p><strong>Location:</strong>{{ $event->location }}</p>
                     <p>{{ $event->desc }}</p>
                 @else
                     <header>
                         <h2>{{ $tag }}: {{ $event->name }}</h2>
-                        <p>with <strong>{{ $event->speaker->name }}</strong></p>
+                        @foreach($event->speakers as $speaker)
+                        -- <strong>{{ $speaker->name }}</strong><br/>
+                        @endforeach
                     </header>
                     <p>{{ $event->desc }}<br/><br/>
 

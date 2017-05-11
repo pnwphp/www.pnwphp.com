@@ -20,7 +20,7 @@
     </div>
 
     <!-- Main -->
-    <div id="main-wrapper">
+    <div id="alt-main-wrapper">
         <div class="container">
             <div id="content">
 
