@@ -1,40 +1,30 @@
 <?php namespace Test\Functional;
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Test\TestCase;
 
 class LoginTest extends TestCase
 {
-    /**
-     * admin
-     * Event Admin
-     */
-    public function test_login_access_admin()
+    public function test_admin_access()
     {
         $this->loginAs('admin')
-             ->see('Event Admin');
+            ->see('Event Admin');
     }
 
-    /**
-     * sponsor
-     * Edit Sponsor Info
-     */
-    public function test_login_access_sponsor()
+    public function test_sponsor_access()
     {
         $this->loginAs('sponsor')
             ->see('Edit Sponsor Info')
-            ->visit('admin/index');
+            ->visit('admin/index')
+            ->seePageIs('sponsors/admin');
     }
 
-    /**
-     * speaker
-     * Edit Speaker Info
-     */
-    public function test_login_access_speaker()
+    public function test_speaker_access()
     {
         $this->loginAs('speaker')
-            ->see('Edit Speaker Info');
+            ->see('Edit Speaker Info')
+            ->visit('admin/index')
+            ->seePageIs('speakers/admin')
+            ->visit('admin/sponsor/delete')
+            ->seePageIs('speakers/admin');
     }
 }

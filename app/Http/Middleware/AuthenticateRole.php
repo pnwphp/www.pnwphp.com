@@ -25,10 +25,10 @@ class AuthenticateRole
             } else {
                 \Log::error(\Auth::user()->name . " user does not have $roleName permissions.");
                 $flash_notification = [
-                    'message' => 'Insufficient permissions to access requested page.',
+                    'message' => \Auth::user()->name . " user does not have $roleName permissions.",
                     'level' => 'danger'
                 ];
-                return redirect()->back()->with('flash_notification', $flash_notification);
+                return redirect()->action('HomeController@home')->with('flash_notification', $flash_notification);
             }
         }
 

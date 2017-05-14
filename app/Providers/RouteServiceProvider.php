@@ -35,7 +35,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapApiRoutes();
+        //$this->mapApiRoutes();
 
         $this->mapWebRoutes();
 
@@ -65,7 +65,6 @@ class RouteServiceProvider extends ServiceProvider
      * These routes are typically stateless.
      *
      * @return void
-     */
     protected function mapApiRoutes()
     {
         Route::group([
@@ -76,4 +75,5 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/api.php');
         });
     }
+     */
 }

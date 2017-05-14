@@ -25,6 +25,9 @@ class HomeController extends Controller
 
     public function home()
     {
+        if (!\Auth::check()) {
+            return redirect()->action('HomeController@index');
+        }
         if (\Auth::user()->isAdmin()) {
             return redirect()->action('AdminController@index');
         }
