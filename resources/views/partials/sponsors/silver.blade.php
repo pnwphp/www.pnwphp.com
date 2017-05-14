@@ -1,14 +1,16 @@
-<div class="4u 12u(medium)">
+<div class="4u 12u(medium)" style="float:left; padding: 5px;">
 
     <!-- Box -->
-    <section class="box feature">
-        <a href="#" class="image"><img src="{{ asset($sponsor->image) }}" alt="" /></a>
-        <div class="inner">
-            <header>
-                <h2>{{ $sponsor->name }}</h2>
-            </header>
-            <p>{{ $sponsor->desc }}</p>
-        </div>
-    </section>
+    <a href="{{ $sponsor->website }}">
+        <section class="feature box" style="max-width: 20em; margin-left: auto; margin-right: auto;">
+            <img src="{{ asset($sponsor->image) }}" alt="" class="image" />
+            <div>
+                <header>
+                    <h2>{{ $sponsor->name }}</h2>
+                </header>
+                <p>{{ $sponsor->desc }}</p>
+            </div>
+        </section>
+    </a>
 
 </div>

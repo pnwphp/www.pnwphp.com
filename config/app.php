@@ -141,6 +141,14 @@ return [
 
     'registration_date' => env('EVENT_REGISTER_DATE', 'Soon'),
 
+    'twitter' => env('EVENT_TWITTER', 'twitter.com'),
+
+    'facebook' => env('EVENT_FACEBOOK', 'facebook.com'),
+
+    'meetup' => env('EVENT_MEETUP', 'meetup.com'),
+
+    'email' => env('EVENT_EMAIL', 'email@example.com'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

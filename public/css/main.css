@@ -143,6 +143,38 @@
 	color: #843534;
 }
 
+/* Custom box */
+.feature-horizontal {
+	background: white;
+	padding: 10px;
+	border-radius: 8px;
+	float:left;
+	width: 100%;
+}
+
+.feature-horizontal img {
+	max-width: 25%;
+	float:left;
+	border-radius: 8px;
+	padding-right: 2%;
+}
+
+.feature-horizontal div {
+	max-width: 70%;
+	float:left;
+	right: 2%;
+}
+
+.feature img {
+	border-radius: 8px;
+	max-height: 250px;
+	width: 96%;
+}
+
+.feature div {
+	padding: 2%;
+}
+
 /* Box Model */
 
 	*, *:before, *:after {

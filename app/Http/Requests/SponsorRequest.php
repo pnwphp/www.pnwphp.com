@@ -25,7 +25,7 @@ class SponsorRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255',
-            'image' => 'max:800|image',
+            'image' => 'max:800|image|max_height:250px',
             'desc' => 'required|max:800',
             'level' => 'required',
             'contact' => 'required|max:255',

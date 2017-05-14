@@ -23,12 +23,24 @@ class SponsorController extends Controller
     public function index()
     {
         $sponsors = [
-            'tier1' => Sponsor::where('level', 'platinum')->get(),
-            'tier2' => Sponsor::where('level', 'gold')->get(),
-            'tier3' => Sponsor::where('level', 'silver')->get(),
-            'tier4' => Sponsor::where('level', 'bronze')->get(),
-            'tier5' => Sponsor::where('level', 'copper')->get(),
-            'tier6' => Sponsor::where('level', 'community')->get()
+            'tier1' => Sponsor::where('level', 'platinum')
+                ->where('active', true)
+                ->get(),
+            'tier2' => Sponsor::where('level', 'gold')
+                ->where('active', true)
+                ->get(),
+            'tier3' => Sponsor::where('level', 'silver')
+                ->where('active', true)
+                ->get(),
+            'tier4' => Sponsor::where('level', 'bronze')
+                ->where('active', true)
+                ->get(),
+            'tier5' => Sponsor::where('level', 'copper')
+                ->where('active', true)
+                ->get(),
+            'tier6' => Sponsor::where('level', 'community')
+                ->where('active', true)
+                ->get(),
         ];
 
 

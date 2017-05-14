@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sponsor;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -54,6 +55,14 @@ class Controller extends BaseController
 
     public function __construct()
     {
-
+        // info for footer
+        $sponsors = Sponsor::inRandomOrder()->where('active', true)->get();
+        $split = $sponsors->split(3);
+        $sponsors = $split->toArray();
+        \View::share([
+            'sponsorColumn1'=>$sponsors[0],
+            'sponsorColumn2'=>$sponsors[1],
+            'sponsorColumn3'=>$sponsors[2]
+        ]);
     }
 }

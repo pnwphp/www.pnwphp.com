@@ -80,14 +80,20 @@ $factory->define(App\Models\Event::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Models\Sponsor::class, function (Faker\Generator $faker) {
-    $level = [
-        'platinum' => 'Platinum',
-        'gold' => 'Gold',
-        'silver' => 'Silver',
-        'bronze' => 'Bronze',
-        'community' => 'Community'
-    ];
-    $level = array_rand($level);
+    $spin = rand(0,200);
+    if ($spin < 5) {
+        $level = 'platinum';
+    } elseif ($spin < 15) {
+        $level = 'gold';
+    } elseif ($spin < 40) {
+        $level = 'silver';
+    } elseif ($spin < 80) {
+        $level = 'bronze';
+    } elseif ($spin < 130) {
+        $level = 'copper';
+    } else {
+        $level = 'community';
+    }
     return [
         'name' => $faker->company,
         'contact' => $faker->name,

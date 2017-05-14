@@ -11,3 +11,4 @@
 
 <!-- Scripts -->
 <!--[if lte IE 8]><script src="{{ asset('js/ie/html5shiv.js') }}"></script><![endif]-->
+<script src="https://use.fontawesome.com/11860f5734.js"></script>
