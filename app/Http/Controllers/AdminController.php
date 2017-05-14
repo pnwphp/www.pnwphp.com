@@ -65,8 +65,8 @@ class AdminController extends Controller
         $sponsor = Sponsor::find($sponsorID);
 
         if (!$sponsor) {
-            // @TODO error handling
-            flash("Unable to locate a sponsor with id $sponsorID", "error");
+            flash("Unable to locate a sponsor with id $sponsorID")->error();
+            \Log::debug("Unable to locate a sponsor with id $sponsorID");
         }
 
         return view('admin.form.sponsor')->with([
@@ -83,6 +83,7 @@ class AdminController extends Controller
         unset($data['_token']);
         unset($data['image']);
         unset($data['sponsorID']);
+        $data['active'] = $data['active'] == 'on' ? true : false;
 
         if ($request->hasFile('image')) {
             $extension = $request->image->extension();
@@ -92,11 +93,12 @@ class AdminController extends Controller
         $sponsor = Sponsor::find($request['sponsorID']);
         if ($sponsor) {
             $sponsor->update($data);
+            flash($sponsor['name'] . " sponsor successfully updated")->success();
         } else {
             Sponsor::create($data);
+            flash($sponsor['name'] . " sponsor successfully created")->success();
         }
 
-        // @TODO flash message
         return redirect()->action('AdminController@getSponsor', [ 'sponsorID' => $request['sponsorID'] ]);
     }
 
@@ -113,7 +115,7 @@ class AdminController extends Controller
             $sponsor->users()->attach($user);
         }
 
-        // @TODO flash message
+        flash($user['name'] . " successfully associated with sponsor " . $sponsor['name'])->success();
         return redirect()->action('AdminController@getSponsor', [ 'sponsorID' => $request['sponsorID'] ]);
     }
 
@@ -123,17 +125,17 @@ class AdminController extends Controller
         $sponsor = Sponsor::find($request['sponsorID']);
         $sponsor->users()->detach($user);
 
-        // @TODO flash message
-
+        flash($user['name'] . " no longer has access to sponsor " . $sponsor['name'])->success();
         return redirect()->action('AdminController@getSponsor', [ 'sponsorID' => $request['sponsorID'] ]);
     }
 
     public function deleteSponsor(Request $request)
     {
         $sponsor = Sponsor::find($request['sponsorID']);
+        $name = $sponsor->name;
         $sponsor->delete();
 
-        // @TODO flash message
+        flash($name . " sponsor has been deleted")->success();
         return redirect()->action('AdminController@index');
     }
 
@@ -152,7 +154,8 @@ class AdminController extends Controller
         $talk = Talk::find($talkID);
 
         if (!$talk) {
-            // @TODO error handling
+            flash("No talk found with id $talkID")->error();
+            return redirect()->back();
         }
         return view('admin.form.talk')->with([
             'talk' => $talk,
@@ -168,12 +171,13 @@ class AdminController extends Controller
         unset($data['_token']);
         unset($data['talkID']);
         if ($request['talkID'] == 'new') {
-            Talk::create($data);
+            $talk = Talk::create($data);
+            flash($talk['name'] . " talk successfully created")->success();
         } else {
-            Talk::find($request['talkID'])->update($data);
+            $talk = Talk::find($request['talkID'])->update($data);
+            flash($talk['name'] . " talk successfully updated")->success();
         }
 
-        // @TODO flash message
         return redirect()->action('AdminController@getTalk', [ 'talkID' => $request['talkID'] ]);
     }
 
@@ -186,7 +190,7 @@ class AdminController extends Controller
             $talk->speakers()->attach($speaker);
         }
 
-        // @TODO flash message
+        flash($speaker['name'] . " successfully associated with talk " . $talk['name'])->success();
         return redirect()->action('AdminController@getTalk', [ 'talkID' => $request['talkID'] ]);
     }
 
@@ -196,16 +200,17 @@ class AdminController extends Controller
         $talk = Talk::find($request['talkID']);
         $talk->speakers()->detach($speaker);
 
-        // @TODO flash message
+        flash($speaker['name'] . " no longer has access to talk " . $talk['name'])->success();
         return redirect()->action('AdminController@getTalk', [ 'talkID' => $request['talkID'] ]);
     }
 
     public function deleteTalk(Request $request)
     {
         $talk = Talk::find($request['talkID']);
+        $name = $talk->name;
         $talk->delete();
 
-        // @TODO flash message
+        flash($name . " talk has been successfully deleted")->success();
         return redirect()->action('AdminController@index');
     }
 
@@ -227,7 +232,8 @@ class AdminController extends Controller
     {
         $speaker = Speaker::find($speakerID);
         if (!$speaker) {
-            // @TODO error handling
+            flash("No speaker found with id $speakerID")->error();
+            return redirect()->back();
         }
         return view('admin.form.speaker')->with([
             'speaker' => $speaker,
@@ -255,11 +261,13 @@ class AdminController extends Controller
             $user->name = $speaker->name;
             $user->speaker()->associate($speaker);
             $user->save();
+
+            flash($speaker['name'] . " speaker has been successfully created")->success();
         } else {
-            Speaker::find($request['speakerID'])->update($data);
+            $speaker = Speaker::find($request['speakerID'])->update($data);
+            flash($speaker['name'] . " has been successfully updated")->success();
         }
 
-        // @TODO flash message
         return redirect()->action('AdminController@getSpeaker', [ 'speakerID' => $request['speakerID'] ]);
     }
 
@@ -273,7 +281,7 @@ class AdminController extends Controller
         $user->speaker()->associate($speaker);
         $user->save();
 
-        // @TODO flash message
+        flash($user['name'] . " user successfully associated with this speaker")->success();
         return redirect()->action('AdminController@getSpeaker', [ 'speakerID' => $request['speakerID'] ]);
     }
 
@@ -283,7 +291,7 @@ class AdminController extends Controller
         $speaker = Speaker::find($request['speakerID']);
         $speaker->talks()->attach($talk);
 
-        // @TODO flash message
+        flash($talk['name'] . " successfully associated with speaker " . $speaker['name'])->success();
         return redirect()->action('AdminController@getSpeaker', [ 'speakerID' => $request['speakerID'] ]);
     }
 
@@ -293,16 +301,17 @@ class AdminController extends Controller
         $speaker = Speaker::find($request['speakerID']);
         $speaker->talks()->detach($talk);
 
-        // @TODO flash message
+        flash($speaker['name'] . " successfully removed from talk " . $talk['name'])->success();
         return redirect()->action('AdminController@getSpeaker', [ 'speakerID' => $request['speakerID'] ]);
     }
 
     public function deleteSpeaker(Request $request)
     {
         $speaker = Speaker::find($request['speakerID']);
+        $name = $speaker->name;
         $speaker->delete();
 
-        // @TODO flash message
+        flash($name . " speaker has been deleted")->success();
         return view('admin.index');
     }
 
@@ -319,7 +328,8 @@ class AdminController extends Controller
     {
         $event = Event::find($eventID);
         if (!$event) {
-            // @TODO error handling
+            flash("No event found with id $eventID")->error();
+            return redirect()->back();
         }
         return view('admin.form.event')->with([
             'event' => $event,
@@ -329,18 +339,30 @@ class AdminController extends Controller
 
     public function postEvent(EventRequest $request)
     {
-        $event = Event::updateOrCreate($request->all());
+        $data = $request->all();
+        unset($data['_token']);
+        unset($data['eventID']);
+        unset($data['image']);
 
-        // @TODO flash message
+        $event = Event::find($request['eventID']);
+        if ($event) {
+            $event->update($data);
+            flash($event['name'] . " event successfully updated")->success();
+        } else {
+            $event = Event::create($data);
+            flash($event['name'] . " event successfully created")->success();
+        }
+
         return view('admin.form.event')->with('event', $event);
     }
 
     public function deleteEvent(Request $request)
     {
         $event = Event::find($request['eventID']);
+        $name = $event->name;
         $event->delete();
 
-        // @TODO flash message
+        flash($name . " has been deleted")->success();
         return view('admin.index');
     }
 

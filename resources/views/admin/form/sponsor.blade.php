@@ -6,7 +6,6 @@
 
 @section($content)
     @include('partials.errors')
-
     {!! Form::model($sponsor, ['url' => $url, 'files' => true ]) !!}
     {{ csrf_field() }}
 
@@ -15,8 +14,10 @@
     {!! Form::label('name', 'Sponsor Name') !!}
     {!! Form::text('name') !!}
 
-    {!! Form::label('active', 'Active?') !!}
-    {!! Form::checkbox('active') !!}
+    @if ($admin)
+        {!! Form::label('active', 'Active?') !!}
+        {!! Form::checkbox('active', null, $sponsor['active']) !!}
+    @endif
 
     {!! Form::label('website', 'Website') !!}
     {!! Form::text('website') !!}

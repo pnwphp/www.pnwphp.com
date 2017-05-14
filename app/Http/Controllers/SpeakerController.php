@@ -51,7 +51,8 @@ class SpeakerController extends Controller
         }
 
         $speaker->update($data);
-        // @TODO flash success message
+
+        flash($speaker['name'] . " speaker has been successfully updated")->success();
         return redirect()->action('SpeakerController@getEditSpeaker');
     }
 }

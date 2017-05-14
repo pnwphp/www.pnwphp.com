@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SponsorRequest;
 use App\Models\Sponsor;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SponsorController extends Controller
@@ -41,6 +42,7 @@ class SponsorController extends Controller
     {
         $sponsorName = md5($request['name']);
         $data = $request->all();
+        $data['active'] = false;
         unset($data['image']);
         unset($data['_token']);
 
@@ -51,7 +53,7 @@ class SponsorController extends Controller
 
         $sponsor = Sponsor::create($data);
         $email = $request['email'];
-        $user = firstOrNew([ 'email' => $email ]);
+        $user = User::firstOrNew([ 'email' => $email ]);
         $user->name = $sponsor->contact;
         $sponsor->attach($user);
         $user->save();
@@ -71,14 +73,15 @@ class SponsorController extends Controller
         $user = \Auth::user();
         $sponsor = $user->sponsors()->where('id', $sponsorID);
         if (!$sponsor) {
-            // @TODO error handling
+            flash("No sponsor found with id $sponsorID")->error();
+            return redirect()->back();
         }
         $data = $request->all();
         unset($data['_token']);
         unset($data['sponsorID']);
         $sponsor->update($data);
 
-        // @TODO flash success message
+        flash($sponsor['name'] . " successfully updated")->success();
         return redirect()->action('SponsorController@getEditSponsor');
     }
 
@@ -94,7 +97,8 @@ class SponsorController extends Controller
         }
         $sponsor = $user->sponsors()->where('sponsor_id', $sponsorID)->first();
         if (!$sponsor) {
-            // @TODO error handling
+            flash("No sponsor found with id $sponsorID")->error();
+            return redirect()->back();
         }
         return view('admin.form.sponsor')->with([
             'sponsor' => $sponsor,

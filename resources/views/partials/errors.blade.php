@@ -14,3 +14,5 @@
         </ul>
     </div>
 @endif
+
+@include('flash::message')

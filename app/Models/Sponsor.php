@@ -4,9 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sponsor extends Model
 {
-    public $active = false;
-
-    protected $fillable = ['name', 'image', 'desc', 'level', 'contact', 'email', 'phone', 'website'];
+    protected $fillable = ['name', 'image', 'desc', 'level', 'contact', 'email', 'phone', 'website', 'active'];
 
     public function __construct(array $attributes = array())
     {
