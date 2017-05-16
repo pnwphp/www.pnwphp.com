@@ -149,6 +149,8 @@ return [
 
     'email' => env('EVENT_EMAIL', 'email@example.com'),
 
+    'mailgun_email' => env('MAILGUN_TEST_EMAIL', 'email@example.com'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

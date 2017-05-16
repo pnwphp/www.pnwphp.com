@@ -67,8 +67,9 @@ class SponsorController extends Controller
         $email = $request['email'];
         $user = User::firstOrNew([ 'email' => $email ]);
         $user->name = $sponsor->contact;
-        $sponsor->attach($user);
         $user->save();
+
+        $sponsor->users()->attach($user);
 
         return view('sponsors.welcome');
     }
