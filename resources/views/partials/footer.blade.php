@@ -45,10 +45,29 @@
         <section class="widget contact last">
             <h3>Contact Us</h3>
             <ul>
-                <li><a href="{{ config('app.twitter') }}" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="{{ config('app.facebook') }}" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                <li><a href="{{ config('app.meetup') }}" class="icon fa-meetup"><span class="label">Meetup</span></a></li>
-                <li><a href="{{ config('app.email') }}" class="icon fa-envelope"><span class="label">Email</span></a></li>
+                <li><a target="_blank" rel="noopener noreferrer"
+                        href="http://{{ config('app.twitter') }}"
+                        class="icon fa-twitter">
+                    <span class="label">Twitter</span>
+                    </a>
+                </li>
+                <li><a target="_blank" rel="noopener noreferrer"
+                        href="http://{{ config('app.facebook') }}"
+                       class="icon fa-facebook">
+                        <span class="label">Facebook</span>
+                    </a>
+                </li>
+                <li><a target="_blank" rel="noopener noreferrer"
+                        href="http://{{ config('app.meetup') }}"
+                        class="icon fa-meetup">
+                        <span class="label">Meetup</span>
+                    </a>
+                </li>
+                <li><a href="mailto:{{ config('app.email') }}"
+                        class="icon fa-envelope">
+                        <span class="label">Email</span>
+                    </a>
+                </li>
             </ul>
         </section>
 
