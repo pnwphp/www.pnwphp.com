@@ -10,6 +10,7 @@ class GuideController extends Controller
     public function __construct()
     {
         \View::share('current', 'guides');
+        parent::__construct();
     }
 
     /**
