@@ -8,7 +8,7 @@
     <div class="5u 12u(medium)">
         <ul>
             <!-- <li><a href="#" class="button">Get Your Ticket</a></li> -->
-            <li><a href="{{ url('contact/guides') }}" class="button">Connect with Us <i class="fa fa-umbrella"></i></a></li>
+            <li><a href="{{ url('contact/Event%20Guides') }}" class="button">Connect with Us <i class="fa fa-umbrella"></i></a></li>
         </ul>
     </div>
 @endsection
@@ -72,7 +72,7 @@
     </ul>
     <ul>
         <!-- <li><a href="#" class="button">Get Your Ticket</a></li> -->
-        <li><a href="{{ url('contact/guides') }}" class="button">Connect with Us <i class="fa fa-umbrella"></i></a></li>
+        <li><a href="{{ url('contact/Event%20Guides') }}" class="button">Connect with Us <i class="fa fa-umbrella"></i></a></li>
     </ul>
 @endsection
 

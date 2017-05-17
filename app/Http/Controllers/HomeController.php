@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
+use App\Mail\Contacted;
+use App\Models\ContactForm;
 use App\Models\Talk;
 use Illuminate\Http\Request;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -18,9 +22,24 @@ class HomeController extends Controller
         return view('index')->with(['features' => $features, 'current' => 'welcome']);
     }
 
-    public function contact()
+    public function getContact($subject = "PNWPHP Conference")
     {
-        return view('index');
+        return view('contact')->with('subject', $subject);
+    }
+
+    public function postContact(ContactRequest $request)
+    {
+        $message = new Contacted($request->except('_token'));
+
+        try {
+            Mail::to(config('app.email'))->send($message);
+            flash("Your message has been sent! Thank you!")->success();
+        } catch(\Exception $e) {
+            var_dump($e);
+            flash("We were unable to send your message:" . $e->getMessage())->error();
+        }
+
+        return redirect()->action('HomeController@getContact')->with('subject', $request['subject']);
     }
 
     public function home()

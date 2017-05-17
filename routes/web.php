@@ -13,7 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('index', 'HomeController@index');
-Route::get('contact/{about?}', 'HomeController@contact');
+Route::get('contact/{subject?}', 'HomeController@getContact');
+Route::post('contact', 'HomeController@postContact');
 Route::get('home', 'HomeController@home');
 
 Route::get('schedule', 'EventController@schedule');

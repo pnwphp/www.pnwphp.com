@@ -63,7 +63,7 @@
                         <span class="label">Meetup</span>
                     </a>
                 </li>
-                <li><a href="mailto:{{ config('app.email') }}"
+                <li><a href="{{ url('contact') }}"
                         class="icon fa-envelope">
                         <span class="label">Email</span>
                     </a>
