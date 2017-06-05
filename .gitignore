@@ -1,0 +1,17 @@
+/node_modules
+/public/storage
+/storage/*.key
+/storage/logs
+/storage/framework/cache
+/storage/framework/views
+/storage/framework/sessions
+/storage/app/public
+/vendor
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+.gitattributes
+.phpstorm.meta.php
+_ide_helper.php
+.DS_Store
