@@ -23,9 +23,9 @@ Route::get('venue/album', 'EventController@venueAlbum');
 Route::get('hotel', 'EventController@hotel');
 
 Route::group(
-    ['prefix' => 'guides/' ], function () {
-    Route::get('', 'GuideController@index');
-    Route::get('index', 'GuideController@index');
+    ['prefix' => 'friends/' ], function () {
+    Route::get('', 'FriendsController@index');
+    Route::get('index', 'FriendsController@index');
 });
 
 Route::group(

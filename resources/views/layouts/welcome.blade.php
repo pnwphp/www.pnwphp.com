@@ -6,26 +6,7 @@
     -->
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Pacific Northwest PHP') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-<!--[if lte IE 8]><link href="{{ asset('css/ie8.css') }}" rel="stylesheet"><![endif]-->
-
-    <!-- Scripts -->
-<!--[if lte IE 8]><script src="{{ asset('js/ie/html5shiv.js') }}"></script><![endif]-->
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
-
+    @include('partials.head')
 </head>
 <body class="homepage">
 <div id="page-wrapper">

@@ -2,13 +2,13 @@
 
 @section('banner')
     <div class="7u 12u(medium)">
-        <h2>Event Guides</h2>
-        <p>The event guide program is all about being proactive about community, and we need you to make it happen.</p>
+        <h2>Event Friends</h2>
+        <p>The Event Friends program is all about being proactive about community, and we need you to make it happen.</p>
     </div>
     <div class="5u 12u(medium)">
         <ul>
             <!-- <li><a href="#" class="button">Get Your Ticket</a></li> -->
-            <li><a href="{{ url('contact/Event%20Guides') }}" class="button">Connect with Us <i class="fa fa-umbrella"></i></a></li>
+            <li><a href="{{ url('contact/Event%20Friends') }}" class="button">Connect with Us <i class="fa fa-umbrella"></i></a></li>
         </ul>
     </div>
 @endsection
@@ -23,7 +23,7 @@
                     <h2>Connect</h2>
                     <p>Random Acts of Community</p>
                 </header>
-                <p>Whether you sign up as a guide or are accepting their service, you are helping to seed our community with interactions based on the perpetual knowledge sharing and support all great creative communities need to thrive.</p>
+                <p>Whether you sign up as a Friend or are accepting their service, you are helping to seed our community with interactions based on the perpetual knowledge sharing and support all great creative communities need to thrive.</p>
             </div>
         </section>
     </div>
@@ -72,29 +72,29 @@
     </ul>
     <ul>
         <!-- <li><a href="#" class="button">Get Your Ticket</a></li> -->
-        <li><a href="{{ url('contact/Event%20Guides') }}" class="button">Connect with Us <i class="fa fa-umbrella"></i></a></li>
+        <li><a href="{{ url('contact/Event%20Friends') }}" class="button">Connect with Us <i class="fa fa-umbrella"></i></a></li>
     </ul>
 @endsection
 
 @section('main-content')
-    <h2>Event Guides</h2>
+    <h2>Event Friends</h2>
     <div class="close">
         <p>It's important to us that all of our speakers and attendees be able to enjoy the event as a safe and welcoming environment.</p>
         <div style="width: 100%; text-align:center">
             --- <i class="fa fa-ticket" style="margin-left:15px; margin-right:15px"></i> ---
         </div>
-        <p>If you are new to conferences, have any concerns about getting around inside the event space -- such as finding restrooms or elevators --, and/or would feel more comfortable and confident having someone accompany you, we encourage you to select to be contacted by our Event Guide program in your registration.</p>
+        <p>If you are new to conferences, have any concerns about getting around inside the event space -- such as finding restrooms or elevators --, and/or would feel more comfortable and confident having someone accompany you, we encourage you to select to be contacted by our Event Friends program in your registration.</p>
         <div style="width: 100%; text-align:center">
             --- <i class="fa fa-ticket" style="margin-left:15px; margin-right:15px"></i> ---
         </div>
-        <p>If you have already registered without selecting that option, please get in touch with us by emailing guides@pnwphp.com and if you don't realize you would like support from our guides until the day of the event, mention it to an organizer or event helper and we will get you connected.</p>
+        <p>If you have already registered without selecting that option, please get in touch with us by emailing friends@pnwphp.com and if you don't realize you would like support from our Event Friends until the day of the event, mention it to an organizer or event helper and we will get you connected.</p>
         <div style="width: 100%; text-align:center">
             --- <i class="fa fa-ticket" style="margin-left:15px; margin-right:15px"></i> ---
         </div>
-        <p>If you are a confident knowledgeable conference goer who would like to help insure that everyone at our event is made safe and welcome, select to sign up to be an event guide in your registration, and depending on need we will be in touch to discuss training for that role.</p>
+        <p>If you are a confident knowledgeable conference goer who would like to help insure that everyone at our event is made safe and welcome, select to sign up to be an Event Friend in your registration, and depending on need we will be in touch to discuss training for that role.</p>
         <div style="width: 100%; text-align:center">
             --- <i class="fa fa-ticket" style="margin-left:15px; margin-right:15px"></i> ---
         </div>
-        <p>If you have already registered without selecting that option, please get in touch with us by emailing guides@pnwphp.com and we'll let you know if we need more guides and how to get started with training.</p><br/>
+        <p>If you have already registered without selecting that option, please get in touch with us by emailing friends@pnwphp.com and we'll let you know if we need more Friends and how to get started with training.</p><br/>
     </div>
 @endsection

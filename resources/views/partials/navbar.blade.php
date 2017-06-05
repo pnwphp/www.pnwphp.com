@@ -26,7 +26,7 @@
                         </h4></a></li>
             </ul>
         </li>
-        <li @if($current == 'guides')class="current"@endif><a href="{{ url('guides') }}">Event Guides</a></li>
+        <li @if($current == 'friends')class="current"@endif><a href="{{ url('friends') }}">Event Friends</a></li>
         <li @if($current == 'sponsors')class="current"@endif><a href="{{ url('sponsors') }}">Sponsors</a></li>
     </ul>
 </nav>

@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class GuideController extends Controller
+class FriendsController extends Controller
 {
 
     public function __construct()
     {
-        \View::share('current', 'guides');
+        \View::share('current', 'friends');
         parent::__construct();
     }
 
@@ -20,6 +20,6 @@ class GuideController extends Controller
      */
     public function index()
     {
-        return view('guides.index');
+        return view('friends.index');
     }
 }

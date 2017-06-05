@@ -21,10 +21,10 @@
     <!-- Sidebar -->
     <section>
         <h3>Getting Around</h3>
-        <p>This year we are launching a new <a href="{{ url('guides') }}">Event Guide</a> program to make sure everyone can access the support and assistance they need to feel comfortable and confident during the conference.</p>
-        <p>Whether you are someone who might benefit from event guides, or someone who might find it rewarding to be one, we hope you will take a look at the program and get involved.</p>
+        <p>This year we are launching a new <a href="{{ url('friends') }}">Event Friends</a> program to make sure everyone can access the support and assistance they need to feel comfortable and confident during the conference.</p>
+        <p>Whether you are someone who might benefit from Event Friends, or someone who might find it rewarding to be one, we hope you will take a look at the program and get involved.</p>
         <footer>
-            <a href="{{ url('guides') }}" class="button icon fa-info-circle">Find out more</a>
+            <a href="{{ url('friends') }}" class="button icon fa-info-circle">Find out more</a>
         </footer>
     </section>
 

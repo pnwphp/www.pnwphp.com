@@ -65,7 +65,7 @@
 @endsection
 
 @section('styles')
-    @parent
     <link rel="stylesheet" href="{{ asset('css/schedule-reset.css') }}"> <!-- CSS reset -->
     <link rel="stylesheet" href="{{ asset('css/schedule-style.css') }}"> <!-- Resource style -->
+    @parent
 @endsection
