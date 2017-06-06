@@ -5,6 +5,9 @@
         <!-- Replace this stuff w grid logos of sponsors -->
         <section class="widget links">
             <h3>Our Awesome Sponsors</h3>
+            @if(empty($sponsorColumn1))
+                <p>Coming soon!</p>
+            @endif
             <ul class="style2">
                 @foreach($sponsorColumn1 as $sponsor)
                     <li><a href="{{ url('sponsors#'.$sponsor['id']) }}">{{ $sponsor['name'] }}</a></li>

@@ -59,6 +59,13 @@ class Controller extends BaseController
         $sponsors = Sponsor::inRandomOrder()->where('active', true)->get();
         $split = $sponsors->split(3);
         $sponsors = $split->toArray();
+        if (empty($sponsors)) {
+            $sponsors = [
+                0 => [],
+                1 => [],
+                2 => []
+            ];
+        }
         \View::share([
             'sponsorColumn1'=>$sponsors[0],
             'sponsorColumn2'=>$sponsors[1],
