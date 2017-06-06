@@ -24,6 +24,9 @@
         <hr>
         <!-- Schedule -->
         <h3>September 6th - September 10th</h3>
+        @if(empty($schedule['Wednesday']))
+            <p>Coming Soon!</p>
+        @endif
         <div class="cd-schedule loading schedule">
             @include('partials.timeline')
 
