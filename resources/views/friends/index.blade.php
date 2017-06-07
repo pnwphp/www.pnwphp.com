@@ -7,8 +7,8 @@
     </div>
     <div class="5u 12u(medium)">
         <ul>
-            <!-- <li><a href="#" class="button">Get Your Ticket</a></li> -->
-            <li><a href="{{ url('contact/Event%20Friends') }}" class="button">Connect with Us <i class="fa fa-umbrella"></i></a></li>
+            @include('partials.action-button')
+            <li><a href="{{ url('contact/Event%20Friends') }}" class="button button-green" style="margin-top:1em;">Connect with Us <i class="fa fa-umbrella"></i></a></li>
         </ul>
     </div>
 @endsection
@@ -71,8 +71,8 @@
         <li>Do you want to help keep these and other factors from excluding others?</li>
     </ul>
     <ul>
-        <!-- <li><a href="#" class="button">Get Your Ticket</a></li> -->
-        <li><a href="{{ url('contact/Event%20Friends') }}" class="button">Connect with Us <i class="fa fa-umbrella"></i></a></li>
+        @include('partials.action-button')
+        <li><a href="{{ url('contact/Event%20Friends') }}" class="button button-green" style="margin-top:1em;">Connect with Us <i class="fa fa-umbrella"></i></a></li>
     </ul>
 @endsection
 
