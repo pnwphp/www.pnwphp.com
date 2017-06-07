@@ -137,9 +137,13 @@ return [
 
     'cfp' => env('EVENT_CFP', 'true'),
 
+    'soldout' => env('EVENT_SOLDOUT', 'false'),
+
     'registration' => env('EVENT_REGISTER', 'true'),
 
     'registration_date' => env('EVENT_REGISTER_DATE', 'Soon'),
+
+    'registration_url' => env('EVENT_REGISTER_URL', 'http://eventbright.com'),
 
     'twitter' => env('EVENT_TWITTER', 'twitter.com'),
 

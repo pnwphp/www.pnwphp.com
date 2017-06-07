@@ -7,15 +7,7 @@
     </div>
     <div class="5u 12u(medium)">
         <ul>
-            @if(config('app.registration'))
-                <li><a href="#" class="button">Get Your Ticket</a></li>
-            @endif
-            @if(config('app.cfp'))
-                <li><a href="#" class="button">Submit a Talk <i class="fa fa-microphone"></i></a></li>
-            @endif
-            @if(!config('app.registration'))
-                <li><a href="#" class="button disabled">Registration Opens June 1st</a></li>
-            @endif
+            @include('partials.action-button')
         </ul>
     </div>
 @endsection
@@ -37,9 +29,6 @@
     <p>The Pacific Northwest PHP Conference is a 3-day event for web developers focused but not confined to PHP. In previous years have included world renowned and talented new speakers covering a range of topics like APIs, Frameworks, testing and version control.</p>
     <p>This year we are looking forward to bringing together the rich and diverse talent of our community as speakers and attendees to share knowledge and inspiration.</p>
     <p>We will dive deep into understanding technology, tools, and processes we all rely on, and explore a wide range technology and processes we are eager to get to know.</p>
-    @if(config('app.registration'))
-        <li><a href="#" class="button">Get Your Ticket</a></li>
-    @else
-        <a href="#" class="button disabled">Registration Opens {{ config('app.registration_date') }}</a>
-    @endif
+
+    @include('partials.action-button')
 @endsection
