@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\CreateAdmin::class,
+        Commands\CreateRoles::class,
         Commands\EnvironmentSetup::class
     ];
 
