@@ -39,9 +39,6 @@
                         {!! Form::label('phone', 'Phone Number*') !!}
                         {!! Form::text('phone', '(555) 867-5309') !!}
 
-                        {!! Form::label('image', 'Image - max height 250px') !!}
-                        {!! Form::file('image') !!}
-
                         {!! Form::label('level', 'Desired Sponsorship Level') !!}
                         {!! Form::select('level', $availableLevels, null, ['placeholder' => 'Select desired level...']) !!}
 

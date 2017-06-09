@@ -8,6 +8,9 @@ class Sponsor extends Model
 
     public function __construct(array $attributes = array())
     {
+        if (!array_key_exists('image', $attributes)) {
+            $attributes['image'] = "images/sponsors/pic04.jpg";
+        }
         parent::__construct($attributes);
     }
 
