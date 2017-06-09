@@ -26,7 +26,6 @@ class SponsorTest extends TestCase
             ->type('New Sponsor Contact', 'contact')
             ->type(config('app.email'), 'email')
             ->type('555-867-5309', 'phone')
-            ->attach(public_path('images/pic01.jpg'), 'image')
             ->select('bronze', 'level')
             ->type('omg what a great description', 'desc')
             ->press('Submit')
