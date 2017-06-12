@@ -3,7 +3,7 @@
     <!-- Box -->
     <a href="{{ $sponsor->website }}" class="feature-link">
         <section class="feature box" style="max-width: 15em; margin-left: auto; margin-right: auto;">
-            <img src="{{ asset($sponsor->image) }}" alt="" class="image" />
+            <img src="{{ asset('storage/'.$sponsor->image) }}" alt="" class="image" />
             <div>
                 <header>
                     <h2>{{ $sponsor->name }}</h2>
