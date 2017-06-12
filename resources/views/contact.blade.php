@@ -10,19 +10,9 @@
 
 @section('content')
     @include('partials.errors')
-    {!! Form::open(['url' => url('contact')]) !!}
-        {!! Form::label('email', 'E-Mail Address') !!}
-        {!! Form::email('email', 'example@gmail.com') !!}
 
-        {!! Form::label('name', 'Name') !!}
-        {!! Form::text('name', 'Your Name Here') !!}
-
-        {!! Form::label('subject', 'Subject') !!}
-        {!! Form::text('subject', $subject) !!}
-
-        {!! Form::label('content', 'Your Message') !!}
-        {!! Form::textarea('content') !!}
-
-        {!! Form::submit('Submit Message') !!}
-    {!! Form::close() !!}
+    <h3>Event Friends</h3>
+    <p>friends@pnwphp.com</p>
+    <h3>All Other Inquiries:</h3>
+    <p>2017@pnwphp.com</p>
 @endsection
