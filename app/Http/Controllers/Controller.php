@@ -59,6 +59,11 @@ class Controller extends BaseController
         $sponsors = Sponsor::inRandomOrder()->where('active', true)->get();
         $split = $sponsors->split(3);
         $sponsors = $split->toArray();
+        for ($i = 0; $i < 3; $i++) {
+            if (!array_key_exists($i, $sponsors)) {
+                $sponsors[$i] = [];
+            }
+        }
         if (empty($sponsors)) {
             $sponsors = [
                 0 => [],
