@@ -10,6 +10,7 @@ class Sponsor extends Model
     {
         if (!array_key_exists('image', $attributes)) {
             $attributes['image'] = "images/sponsors/pic04.jpg";
+            $attributes['desc'] = "";
         }
         parent::__construct($attributes);
     }
