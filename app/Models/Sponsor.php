@@ -6,12 +6,14 @@ class Sponsor extends Model
 {
     protected $fillable = ['name', 'image', 'desc', 'level', 'contact', 'email', 'phone', 'website', 'active'];
 
+    protected $attributes = [
+        'image' => "images/sponsors/pic04.jpg",
+        'desc' => "",
+        'active' => false
+    ];
+
     public function __construct(array $attributes = array())
     {
-        if (!array_key_exists('image', $attributes)) {
-            $attributes['image'] = "images/sponsors/pic04.jpg";
-            $attributes['desc'] = "";
-        }
         parent::__construct($attributes);
     }
 
