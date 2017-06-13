@@ -80,10 +80,11 @@ class AdminController extends Controller
     {
         $sponsorName = md5($request['name']);
         $data = $request->all();
+        $sponsorID = $data['sponsorID'];
         unset($data['_token']);
         unset($data['image']);
         unset($data['sponsorID']);
-        $data['active'] = $data['active'] == 'on' ? true : false;
+        //$data['active'] = $data['active'] == 'on' ? true : false;
 
         if ($request->hasFile('image')) {
             $extension = $request->image->extension();
@@ -91,15 +92,17 @@ class AdminController extends Controller
         }
 
         $sponsor = Sponsor::find($request['sponsorID']);
+        var_dump($sponsor);
         if ($sponsor) {
             $sponsor->update($data);
             flash($sponsor['name'] . " sponsor successfully updated")->success();
         } else {
-            Sponsor::create($data);
+            $sponsor = Sponsor::create($data);
+            $sponsorID = $sponsor->id;
             flash($sponsor['name'] . " sponsor successfully created")->success();
         }
 
-        return redirect()->action('AdminController@getSponsor', [ 'sponsorID' => $request['sponsorID'] ]);
+        return redirect()->action('AdminController@getSponsor', [ 'sponsorID' => $sponsorID ]);
     }
 
     public function addUserToSponsor(Request $request)
