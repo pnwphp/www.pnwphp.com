@@ -84,7 +84,9 @@ class AdminController extends Controller
         unset($data['_token']);
         unset($data['image']);
         unset($data['sponsorID']);
-        //$data['active'] = $data['active'] == 'on' ? true : false;
+        if (array_key_exists('active', $data)) {
+            $data['active'] = $data['active'] == 'on' ? true : false;
+        }
 
         if ($request->hasFile('image')) {
             $extension = $request->image->extension();
@@ -92,7 +94,6 @@ class AdminController extends Controller
         }
 
         $sponsor = Sponsor::find($request['sponsorID']);
-        var_dump($sponsor);
         if ($sponsor) {
             $sponsor->update($data);
             flash($sponsor['name'] . " sponsor successfully updated")->success();
