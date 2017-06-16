@@ -44,7 +44,7 @@
                                         data-event="event-{{ ($loop->index % 3) + 1 }}"
                                     >
                                         <a href="#0">
-                                            <em class="event-name">{{ $eventKey }}: {{ $event['name'] }}</em>
+                                            <em class="event-name">{{ $event['name'] }}</em>
                                         </a>
                                     </li>
                                 @endforeach

@@ -27,7 +27,7 @@ class EventController extends Controller
         $days = $this->days;
 
         $schedule = [];
-        foreach ($days as $day) {
+        foreach ($days as $day => $name) {
             $talks = Talk::where('day', $day)->orderBy('start_time', 'ASC')->get();
             $events = Event::where('day', $day)->orderBy('start_time', 'ASC')->get();
 
@@ -36,7 +36,7 @@ class EventController extends Controller
 
             $today = array_merge($talks, $events);
             asort($today);
-            $schedule[$day] = $today;
+            $schedule[$name] = $today;
         }
         return view('event.schedule')->with([ 'schedule' => $schedule ]);
     }

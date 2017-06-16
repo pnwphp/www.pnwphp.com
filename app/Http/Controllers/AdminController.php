@@ -362,7 +362,7 @@ class AdminController extends Controller
             flash($event['name'] . " event successfully created")->success();
         }
 
-        return view('admin.form.event')->with('event', $event);
+        return view('admin.form.event')->with(['event' => $event, 'eventDays' => $this->days]);
     }
 
     public function deleteEvent(Request $request)

@@ -24,7 +24,7 @@
                     <header>
                         <h2>{{ $tag }}: {{ $event->name }}</h2>
                     </header>
-                    <p><strong>Location:</strong>{{ $event->location }}</p>
+                    <p><strong>Location: </strong>{{ $event->location }}</p>
                     <p>{{ $event->desc }}</p>
                 @else
                     <header>
