@@ -2,7 +2,7 @@
 
     <!-- Box -->
     <section class="box feature">
-        <a href="#" class="image"><img src="{{ asset($speaker->image) }}" alt="" /></a>
+        <a href="#" class="image"><img src="{{ asset('storage/'.$speaker->image) }}" alt="" /></a>
         <div class="inner">
             <header>
                 <h2>{{ $speaker->name }}</h2>
