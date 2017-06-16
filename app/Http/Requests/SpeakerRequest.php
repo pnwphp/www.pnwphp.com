@@ -26,7 +26,7 @@ class SpeakerRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:speakers|max:255',
-            'image' => 'required|max:800|image',
+            'image' => 'max:800|image',
             'desc' => 'required|max:800'
         ];
     }
