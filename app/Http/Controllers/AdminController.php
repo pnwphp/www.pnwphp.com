@@ -269,8 +269,12 @@ class AdminController extends Controller
             $extension = $request->image->extension();
             $data['image'] = $request->image->storeAs('speakers', $speakerName.'.'.$extension, 'public');
         }
-
-        if ($request['speakerID'] == 'new') {
+        
+        $speaker = Talk::find($request['speakerID']);
+        if ($speaker) {
+            $speaker = Speaker::find($request['speakerID'])->update($data);
+            flash($speaker['name'] . " has been successfully updated")->success();
+        } else {
             unset($data['email']);
             $speaker = Speaker::create($data);
             $user = User::firstOrNew([ 'email' => $request['email'] ]);
@@ -279,9 +283,6 @@ class AdminController extends Controller
             $user->save();
 
             flash($speaker['name'] . " speaker has been successfully created")->success();
-        } else {
-            $speaker = Speaker::find($request['speakerID'])->update($data);
-            flash($speaker['name'] . " has been successfully updated")->success();
         }
 
         return redirect()->action('AdminController@getSpeaker', [ 'speakerID' => $speaker->id ]);
