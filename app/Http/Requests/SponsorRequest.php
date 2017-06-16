@@ -31,8 +31,7 @@ class SponsorRequest extends FormRequest
             'contact' => 'required|max:255',
             'email' => 'required|max:255',
             'phone' => 'required|max:25',
-            'website' => 'required|max:255',
-            'active' => 'boolean'
+            'website' => 'required|max:255'
         ];
     }
 }

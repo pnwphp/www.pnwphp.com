@@ -84,8 +84,13 @@ class AdminController extends Controller
         unset($data['_token']);
         unset($data['image']);
         unset($data['sponsorID']);
+        // @TODO fix form / request processing so these shenanigans aren't needed in the controller
         if (array_key_exists('active', $data)) {
-            $data['active'] = $data['active'] == 'on' ? true : false;
+            if ($data['active'] == 'on') {
+                $data['active'] = true;
+            }
+        } else {
+            $data['active'] = false;
         }
 
         if ($request->hasFile('image')) {
