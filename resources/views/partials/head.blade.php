@@ -11,13 +11,15 @@
 
 <style>
     .event-name .event-date {
-
         line-height: initial;
         font-family: inherit;
         font-stretch: inherit;
         font-variant-ligatures: inherit;
         font-variant-caps: inherit;
         font-variant-numeric: inherit;
+    }
+    li {
+        list-style: none;
     }
 </style>
 

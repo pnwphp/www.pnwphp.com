@@ -3,6 +3,7 @@
 @section('banner')
     <div class="7u 12u(medium)">
         <h2>Pacific Northwest PHP</h2>
+        <h4>September 6th - 9th @ Washington University's Kane Hall</h4>
         <p>Seattle's annual PHP community conference</p>
     </div>
     <div class="5u 12u(medium)">
