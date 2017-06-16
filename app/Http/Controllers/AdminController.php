@@ -359,6 +359,7 @@ class AdminController extends Controller
         unset($data['eventID']);
         unset($data['image']);
 
+        \Log::debug($request['eventID']);
         $event = Event::find($request['eventID']);
         if ($event) {
             $event->update($data);
