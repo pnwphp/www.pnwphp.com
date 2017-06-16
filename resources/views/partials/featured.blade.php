@@ -2,7 +2,7 @@
 
     <!-- Box -->
     <section class="box feature">
-        <a href="#" class="image featured"><img src="{{ asset($feature->getImage()) }}" alt="" style="width:100%;"/></a>
+        <a href="#" class="image featured"><img src="{{ asset('storage/'.$feature->getImage()) }}" alt="" style="width:100%;"/></a>
         <div class="inner">
             <header>
                 <h2>{{ $feature['name'] }}</h2>
