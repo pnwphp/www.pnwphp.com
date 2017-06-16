@@ -15,9 +15,8 @@
         If you haven't submitted talk proposals to share the things which excite and inspire you yet, we really hope you will!<br/><br/>
         <a href="http://cfp.pnwphp.com/" target="_blank" class="button">Submit a Talk Now</a>
     @else
-        <strong>Shhh! It's a surprise!</strong> <br/>
-        The Call for Papers has just closed and our organizers have begun the arduious process of narrowing down all of these amazing submissions to what will fit in our limited schedule and offer our attendees an outstanding experience.<br/><br/>
-        We will announce the PNW PHP 2017 speakers and talks just as soon as we can!
+        <strong>What an Amazing Group of Speakers!</strong> <br/>
+        We are delighted to be bringing together this group of exceptional technologists and presenters.  There were far more truly impressive submissions than we could fit into this community event, which means this conference is jam packed with goodness.  Below you can learn about the community members who will be stepping up to share thier knowledge.  We are looking forward to having a wonderful time learning about technology and getting to know each other better at Pacific Northwest PHP in Seattle this September!
     @endif
 
 @endsection

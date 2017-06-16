@@ -12,9 +12,8 @@
         If you haven't submitted talk proposals to share the things which excite and inspire you yet, we really hope you will!<br/><br/>
         <a href="http://cfp.pnwphp.com/" target="_blank" class="button">Submit a Talk Now</a>
     @else
-        <strong>Shhh! It's a surprise!</strong> <br/>
-        The Call for Papers has just closed and our organizers have begun the arduious process of narrowing down all of these amazing submissions to what will fit in our limited schedule and offer our attendees an outstanding experience.<br/><br/>
-        We will announce the PNW PHP 2017 speakers and talks just as soon as we can!
+        <strong>See You There!</strong> <br/>
+        We have so many amazing experiences lined up for this year's Pacific Northwest PHP conference! Starting with a special extended SeaPHP Meetup and a full day of workshops.  The main event is two full days of fantastic talks and panels as well as the opportunity to share some meals, catch up with old friends, and make new ones!  Then join in the after party where we can talk about all we've learned, and celebrate the awesome developer community we share.
     @endif
 @endsection
 
@@ -23,7 +22,7 @@
         <br/>
         <hr>
         <!-- Schedule -->
-        <h3>September 6th - September 10th</h3>
+        <h3>September 6th - September 9th</h3>
         @if(empty($schedule['Wednesday']))
             <p>Coming Soon!</p>
         @endif

@@ -25,7 +25,7 @@ class SpeakerRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:speakers|max:255',
+            'name' => 'required|max:255',
             'image' => 'max:800|image',
             'desc' => 'required|max:800'
         ];
