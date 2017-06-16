@@ -180,12 +180,14 @@ class AdminController extends Controller
         $data = $request->all();
         unset($data['_token']);
         unset($data['talkID']);
-        if ($request['talkID'] == 'new') {
+
+        $talk = Talk::find($request['talkID']);
+        if ($talk) {
+            $talk->update($data);
+            flash($talk['name'] . " talk successfully updated")->success();
+        } else {
             $talk = Talk::create($data);
             flash($talk['name'] . " talk successfully created")->success();
-        } else {
-            $talk = Talk::find($request['talkID'])->update($data);
-            flash($talk['name'] . " talk successfully updated")->success();
         }
 
         return redirect()->action('AdminController@getTalk', [ 'talkID' => $talk->id ]);
