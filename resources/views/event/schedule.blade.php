@@ -13,7 +13,11 @@
         <a href="http://cfp.pnwphp.com/" target="_blank" class="button">Submit a Talk Now</a>
     @else
         <strong>See You There!</strong> <br/>
-        We have so many amazing experiences lined up for this year's Pacific Northwest PHP conference! Starting with a special extended SeaPHP Meetup and a full day of workshops.  The main event is two full days of fantastic talks and panels as well as the opportunity to share some meals, catch up with old friends, and make new ones!  Then join in the after party where we can talk about all we've learned, and celebrate the awesome developer community we share.
+        <i class="fa fa-beer"></i> We have so many amazing experiences lined up for this year's Pacific Northwest PHP conference! Starting with a special extended SeaPHP Meetup at the WeWork Holyoke Building on Wednesday evening and two tracks of workshops to choose from on Thursday at Washington University's Johnson Hall.
+        <br/><i class="fa fa-ticket"></i>
+        The main event is two full days of fantastic talks and panels as well as the opportunity to share some meals, catch up with old friends, and make new ones!  Join us for the Pacific Northwest PHParty Friday night where we can talk about all we've learned, and celebrate the awesome developer community we share.
+        <br/><i class="fa fa-cutlery"></i> 
+        If you're still in town on Sunday (and we hope you will be!) we will be meeting up from 11am until 2pm at <a href="http://www.shultzys.com/" target="_blank" rel="noopener noreferrer">Shultzy's Bar and Grill</a> for a PHP Community tradition: WurstCon.
     @endif
 @endsection
 
