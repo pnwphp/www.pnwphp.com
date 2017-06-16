@@ -24,7 +24,7 @@ class TalkRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:talks|max:255',
+            'name' => 'required|max:255',
             'desc' => 'required|max:800',
             'level' => 'required|max:32',
             'category' => 'required|max:64',
