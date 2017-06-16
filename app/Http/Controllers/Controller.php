@@ -53,6 +53,13 @@ class Controller extends BaseController
         'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
     ];
 
+    public $designations = [
+        'workshop' => 'Workshop',
+        'keynote' => 'Keynote',
+        'talk' => 'Talk',
+        'panel' => 'Panel'
+    ];
+
     public function __construct()
     {
         // info for footer

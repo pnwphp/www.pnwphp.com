@@ -32,7 +32,7 @@ class User extends Authenticatable implements HasRoleAndPermissionContract
 
     public function speaker()
     {
-        return $this->hasOne('App\Models\Speaker');
+        return $this->hasOne('App\Models\Speaker', 'user_id', 'id');
     }
 
     public function sponsors()

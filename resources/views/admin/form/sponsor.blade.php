@@ -16,7 +16,7 @@
 
     @if ($admin)
         {!! Form::label('active', 'Active?') !!}
-        {!! Form::checkbox('active', false, $sponsor['active']) !!}
+        {!! Form::checkbox('active', null, $sponsor['active']) !!}
     @endif
 
     {!! Form::label('website', 'Website') !!}
