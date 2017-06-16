@@ -41,7 +41,7 @@
     </div>
 
     <hr>
-    @if(count($speaker->user) > 0)
+    @if($speaker->user)
         <h3>Associated User:</h3>
         <div class="alert alert-info">
             {!! Form::open([ 'url' => 'admin/speaker/remove_user' ]) !!}

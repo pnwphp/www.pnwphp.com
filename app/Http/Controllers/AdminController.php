@@ -170,7 +170,8 @@ class AdminController extends Controller
             'talk' => $talk,
             'talkLevels' => $this->talkLevels,
             'talkCategories' => $this->talkCategories,
-            'talkDays' => $this->days
+            'talkDays' => $this->days,
+            'talkDesignations' => $this->designations
         ]);
     }
 
@@ -187,19 +188,22 @@ class AdminController extends Controller
             flash($talk['name'] . " talk successfully updated")->success();
         }
 
-        return redirect()->action('AdminController@getTalk', [ 'talkID' => $request['talkID'] ]);
+        return redirect()->action('AdminController@getTalk', [ 'talkID' => $talk->id ]);
     }
 
     public function addSpeakerToTalk(Request $request)
     {
-        $speaker = Speaker::find($request['speakerID']);
-        $talk = Talk::find($request['talkID']);
+        $speaker = Speaker::findOrFail($request['speaker']);
+        $talk = Talk::findOrFail($request['talkID']);
 
-        if (empty($talk->speakers()->find($speaker->id))) {
-            $talk->speakers()->attach($speaker);
+        $talkSpeaker = $talk->speakers()->where('speaker_id', $speaker->id)->first();
+        if (!$talkSpeaker) {
+            $talk->speakers()->save($speaker);
+            flash($speaker['name'] . " successfully associated with talk " . $talk['name'])->success();
+        } else {
+            flash($speaker['name'] . " is associated with talk " . $talk['name'])->success();
         }
 
-        flash($speaker['name'] . " successfully associated with talk " . $talk['name'])->success();
         return redirect()->action('AdminController@getTalk', [ 'talkID' => $request['talkID'] ]);
     }
 
@@ -228,7 +232,8 @@ class AdminController extends Controller
         return view('admin.form.new.talk')->with([
             'talkLevels' => $this->talkLevels,
             'talkCategories' => $this->talkCategories,
-            'days' => $this->days
+            'talkDays' => $this->days,
+            'talkDesignations' => $this->designations
         ]);
     }
 
@@ -268,7 +273,7 @@ class AdminController extends Controller
             $speaker = Speaker::create($data);
             $user = User::firstOrNew([ 'email' => $request['email'] ]);
             $user->name = $speaker->name;
-            $user->speaker()->associate($speaker);
+            $user->speaker()->save($speaker);
             $user->save();
 
             flash($speaker['name'] . " speaker has been successfully created")->success();
@@ -277,17 +282,18 @@ class AdminController extends Controller
             flash($speaker['name'] . " has been successfully updated")->success();
         }
 
-        return redirect()->action('AdminController@getSpeaker', [ 'speakerID' => $request['speakerID'] ]);
+        return redirect()->action('AdminController@getSpeaker', [ 'speakerID' => $speaker->id ]);
     }
 
     public function addUserToSpeaker(Request $request)
     {
-        $speaker = Speaker::find($request['speakerID']);
+        $speaker = Speaker::findOrFail($request['speakerID']);
+
         $user = User::firstOrNew([
             'email' => $request['email']
         ]);
-        $user->name($speaker->name);
-        $user->speaker()->associate($speaker);
+        $user->name = $speaker->name;
+        $user->speaker()->save($speaker);
         $user->save();
 
         flash($user['name'] . " user successfully associated with this speaker")->success();

@@ -14,6 +14,9 @@
     {!! Form::label('name', 'Talk Name') !!}
     {!! Form::text('name') !!}
 
+    {!! Form::label('designation', 'Talk Type') !!}
+    {!! Form::select('designation', $talkDesignations, null, ['placeholder' => 'Select a designation...']) !!}
+
     {!! Form::label('level', 'Talk Level') !!}
     {!! Form::select('level', $talkLevels, null, ['placeholder' => 'Select talk level...']) !!}
 
@@ -27,10 +30,12 @@
     {!! Form::select('day', $talkDays, null, ['placeholder' => 'Select presentation day...']) !!}
 
     {!! Form::label('start_time', 'Start Time') !!}
+    A 24 hour based clock time. Examples: 10:30, 16:45, 18:20.<br/>
     {!! Form::text('start_time') !!}
 
     {!! Form::label('end_time', 'End Time') !!}
-    {!! Form::textarea('end_time') !!}
+    A 24 hour based clock time. Examples: 10:30, 16:45, 18:20.<br/>
+    {!! Form::text('end_time') !!}
 
     {!! Form::submit('Update Talk Info') !!}
     {!! Form::close() !!}
@@ -41,18 +46,15 @@
         {!! Form::open([ 'url' => 'admin/talk/add_speaker' ]) !!}
         {!! Form::hidden('talkID', $talk->id) !!}
 
-        {!! Form::label('name', 'Name') !!}
-        {!! Form::text('name') !!}
-
-        {!! Form::label('email', 'E-Mail Address') !!}
-        {!! Form::email('email') !!}
+        {!! Form::label('speaker', 'Speaker') !!}
+        {!! Form::select('speaker', $speakers, null, ['placeholder' => 'Select a speaker...']) !!}
 
         {!! Form::submit('Add this Speaker') !!}
         {!! Form::close() !!}
     </div>
 
     <hr>
-    @if(count($talk->users) > 0)
+    @if(count($talk->speakers) > 0)
         <h3>Associated Speakers:</h3>
         @foreach($talk->speakers as $speaker)
             <div class="alert alert-info">

@@ -14,6 +14,9 @@
     {!! Form::label('name', 'Talk Name') !!}
     {!! Form::text('name', 'Awesome Talk Name') !!}
 
+    {!! Form::label('designation', 'Talk Type') !!}
+    {!! Form::select('designation', $talkDesignations, null, ['placeholder' => 'Select a designation...']) !!}
+
     {!! Form::label('level', 'Talk Level') !!}
     {!! Form::select('level', $talkLevels, null, ['placeholder' => 'Select talk level...']) !!}
 
@@ -27,10 +30,12 @@
     {!! Form::select('day', $talkDays, null, ['placeholder' => 'Select presentation day...']) !!}
 
     {!! Form::label('start_time', 'Start Time') !!}
+    A 24 hour based clock time. Examples: 10:30, 16:45, 18:20.<br/>
     {!! Form::text('start_time') !!}
 
     {!! Form::label('end_time', 'End Time') !!}
-    {!! Form::textarea('end_time') !!}
+    A 24 hour based clock time. Examples: 10:30, 16:45, 18:20.<br/>
+    {!! Form::text('end_time') !!}
 
     {!! Form::submit('Create Talk') !!}
     {!! Form::close() !!}
