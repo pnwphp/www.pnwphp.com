@@ -1684,6 +1684,9 @@
 			}
 
 /* Image */
+	.sponsor-image {
+		margin: 0.15em 0.3em !important;
+	}
 
 	.image {
 		display: inline-block;
