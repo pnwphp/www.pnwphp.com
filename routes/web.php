@@ -100,4 +100,5 @@ Route::group(
     Route::get('event', 'AdminController@newEvent');
     Route::get('event/{id}', 'AdminController@getEvent');
     Route::post('event', 'AdminController@postEvent');
+    Route::post('event/delete', 'AdminController@deleteEvent');
 });

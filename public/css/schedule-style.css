@@ -8,11 +8,11 @@ Primary style
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 52.5%;
 }
 
 body {
-  font-size: 1em;
+  font-size: .75em;
   font-family: "Source Sans Pro", sans-serif;
   color: #222222;
   background-color: white;
@@ -175,7 +175,7 @@ li.single-event > em {
 .cd-schedule .events .single-event a {
   display: block;
   height: 100%;
-  padding: .8em;
+  padding: .5em;
 }
 
 @media only screen and (min-width: 550px) {
@@ -248,7 +248,7 @@ li.single-event > em {
     margin-right: 0;
   }
   .cd-schedule .events .single-event a {
-    padding: 1.2em;
+    padding: 0.6em;
   }
   .cd-schedule .events .single-event:last-of-type {
     /* reset style */
