@@ -8,7 +8,7 @@
     <ul>
         <li @if($current == 'welcome')class="current"@endif><a href="{{ url('index') }}">Welcome</a></li>
         <li @if($current == 'event')class="current"@endif>
-            <a href="#">Conference</a>
+            <a href="{{ url('schedule') }}">Conference</a>
             <ul>
                 <li><a href="{{ url('schedule') }}"><h4>
                             <i class="fa fa-check-square-o"></i> Schedule
