@@ -21,6 +21,7 @@ Route::get('schedule', 'EventController@schedule');
 Route::get('venue', 'EventController@venue');
 Route::get('venue/album', 'EventController@venueAlbum');
 Route::get('hotel', 'EventController@hotel');
+Route::get('getting-here', 'EventController@gettingHere');
 
 Route::group(
     ['prefix' => 'friends/' ], function () {
@@ -101,4 +102,12 @@ Route::group(
     Route::get('event/{id}', 'AdminController@getEvent');
     Route::post('event', 'AdminController@postEvent');
     Route::post('event/delete', 'AdminController@deleteEvent');
+});
+
+Route::group(
+	['prefix' => 'api/'], function () {
+	Route::get('', 'ApiController@index');
+	Route::get('schedule', 'ApiController@schedule');
+	Route::get('speakers', 'ApiController@speakers');
+	Route::get('sponsors', 'ApiController@sponsors');
 });
