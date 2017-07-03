@@ -103,3 +103,11 @@ Route::group(
     Route::post('event', 'AdminController@postEvent');
     Route::post('event/delete', 'AdminController@deleteEvent');
 });
+
+Route::group(
+	['prefix' => 'api/'], function () {
+	Route::get('', 'ApiController@index');
+	Route::get('schedule', 'ApiController@schedule');
+	Route::get('speakers', 'ApiController@speakers');
+	Route::get('sponsors', 'ApiController@sponsors');
+});
