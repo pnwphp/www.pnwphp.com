@@ -33,7 +33,7 @@
         <p>When not acting as a venue for spectacular tech conferences and other community events, Kane Hall's Auditorium 120 serves the students of Washington University as a classroom.</p>
         <p>The university's page for the auditorium includes useful specifics such as the technical setup, basic accessibility information, and a detailed floorplan.</p>
         <footer>
-            <a href="https://www.washington.edu/classroom/KNE+120" target="_blank" class="button icon fa-info-circle">Find out more</a>
+            <a href="https://www.washington.edu/classroom/KNE+120" target="_blank" rel="noopener noreferrer" class="button icon fa-info-circle">Find out more</a>
         </footer>
     </section>
 @endsection

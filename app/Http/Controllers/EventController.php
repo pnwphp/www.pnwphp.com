@@ -58,6 +58,11 @@ class EventController extends Controller
         return view('event.hotel')->with([ 'image' => $image ]);
     }
 
+    public function coc()
+    {
+        return view('event.coc');
+    }
+
     public function sortByStartTime($timeSlots, $label)
     {
         $sorted = [];
