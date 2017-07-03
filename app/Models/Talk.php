@@ -1,8 +1,10 @@
 <?php namespace App\Models;
 
+use App\Models\Api\DateFixer;
+
 class Talk extends BaseModel
 {
-	use API\DateFixer;
+	use DateFixer;
     protected $fillable = [ 'name', 'desc', 'designation', 'category', 'level', 'start_time', 'end_time', 'day' ];
 
     protected $categories = [

@@ -1,7 +1,9 @@
 <?php namespace App\Models;
 
+use App\Models\Api\DateFixer;
+
 class Event extends BaseModel
 {
-	use API\DateFixer;
+	use DateFixer;
     protected $fillable = [ 'name', 'desc', 'start_time', 'end_time', 'day', 'location' ];
 }
