@@ -7,13 +7,18 @@
 @section('main-content')
     <p>University of Washington is an outstanding school with a beautiful campus located in the heart of Seattle. The main conference will be held at Kane Hall, and the workshops in nearby Johnson Hall.</p>
 
+    <ul>
+        <li><i class="fa fa-location-arrow"></i>
+            <strong><a href="{{ url('venue/getting-here') }}"> Getting Here</a></strong>
+        </li>
+        <li><i class="fa fa-camera"></i>
+            <strong><a href="{{ url('venue/album') }}"> Have a Look Around</a></strong>
+        </li>
+    </ul>
+
     <div style="height:25em;">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.4257450102427!2d-122.31124898455218!3d47.656725092507514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490148d297e703f%3A0x46fb837b5e7c7474!2sKane+Hall+(KNE)!5e0!3m2!1sen!2sus!4v1491530837101" frameborder="0" style="border:0; width: 100%; height: 100%" allowfullscreen></iframe>
     </div>
-
-    <br>
-    <hr>
-    <a href="{{ url('venue/album') }}" class="button">Have a Look Around</a>
 
 @endsection
 

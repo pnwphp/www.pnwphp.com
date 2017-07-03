@@ -2,6 +2,7 @@
 
 class Talk extends BaseModel
 {
+	use API\DateFixer;
     protected $fillable = [ 'name', 'desc', 'designation', 'category', 'level', 'start_time', 'end_time', 'day' ];
 
     protected $categories = [
