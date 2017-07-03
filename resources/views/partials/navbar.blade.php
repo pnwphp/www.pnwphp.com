@@ -24,6 +24,9 @@
                 <li><a href="{{ url('hotel') }}"><h4>
                             <i class="fa fa-bed"></i> Hotel
                         </h4></a></li>
+				<li><a href="{{ url('getting-here') }}"><h4>
+							<i class="fa fa-location-arrow"></i> Getting Here
+						</h4></a></li>
             </ul>
         </li>
         <li @if($current == 'friends')class="current"@endif><a href="{{ url('friends') }}">Event Friends</a></li>
