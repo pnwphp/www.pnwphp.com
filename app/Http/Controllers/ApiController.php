@@ -88,13 +88,13 @@ class ApiController extends Controller {
 	 * @return string
 	 */
 	private static function getRoom(Talk $talk) : string {
-		if(preg_match('/Thursday Room (\d+)/', $talk->day, $matches)) {
+		if(preg_match('/Thursday Room (\d+)/', $talk->day, $matches) || $talk->day == 'Thursday') {
 			return "Johnson Hall room {$matches[1]}";
 		}
 		if($talk->day == 'Friday' || $talk->day == 'Saturday') {
 			return 'Kane Hall room 220';
 		}
-		return null;
+		return '';
 	}
 
 	/**
