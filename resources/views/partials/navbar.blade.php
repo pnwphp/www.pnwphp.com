@@ -6,7 +6,7 @@
 
 <nav id="nav">
     <ul>
-        <li @if($current == 'welcome')class="current"@endif><a href="{{ url('index') }}">Welcome</a></li>
+        <li @if($current == 'welcome')class="current"@endif><a href="{{ url('/') }}">Welcome</a></li>
         <li @if($current == 'event')class="current"@endif>
             <a href="{{ url('schedule') }}">Conference</a>
             <ul>
