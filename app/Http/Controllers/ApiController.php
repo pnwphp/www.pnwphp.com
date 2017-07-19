@@ -34,7 +34,7 @@ class ApiController extends Controller {
 			$event->category = self::getCategory($talk);
 			$event->session_type = ucfirst($talk->designation);
 			$event->experience_level = $talk->level;
-			$event->room = self::getRoom($talk);
+			$event->room = $this->getRoom($talk);
 			$event->date = $talk->getDate();
 			$event->start = $talk->getDate() . ' ' . self::formatTime($talk->start_time);
 			$event->end = $talk->getDate() . ' ' . self::formatTime($talk->end_time);
@@ -87,11 +87,11 @@ class ApiController extends Controller {
 	 * @param Talk $talk
 	 * @return string
 	 */
-	private static function getRoom(Talk $talk) : string {
-		if(preg_match('/Thursday Room (\d+)/', $talk->day, $matches) || $talk->day == 'Thursday') {
+	private function getRoom(Talk $talk) : string {
+		if(preg_match('/Thursday Room (\d+)/', $this->days[$talk->day], $matches)) {
 			return "Johnson Hall room {$matches[1]}";
 		}
-		if($talk->day == 'Friday' || $talk->day == 'Saturday') {
+		if($this->days[$talk->day] == 'Friday' || $this->days[$talk->day] == 'Saturday') {
 			return 'Kane Hall room 220';
 		}
 		return '';
