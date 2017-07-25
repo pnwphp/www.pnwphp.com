@@ -2174,14 +2174,25 @@
 /* Banner */
 
 	#banner {
-		position: relative;
-		padding: 4.5em;
-        border-radius: 6px;
-        border: solid 6px white;
-        background-image: url("images/rainier-background.png");
+        /*background-image: url("images/rainier-background.png");*/
+        background-image: url("images/seattle-bg.jpg");
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: bottom right;
+        background-size: cover;
+        padding: 10em 4.5em 4.5em;
+        min-height: 500px;
 	}
+
+        #innerbox {
+            background-color: rgba(255,255,255,0.75);
+            padding: 25px;
+
+            width: 70%;
+        }
+
+        #innerbox .button.disabled {
+            background-color: #e8e8e8;
+        }
 
 		#banner h2 {
 			font-size: 2.5em;
@@ -2216,8 +2227,12 @@
 			}
 
 		#banner ul {
-			margin: 0 0 0 2em;
+			margin: 2em 0 0 0;
 		}
+
+        #banner ul li {
+            max-width: 450px;
+        }
 
 /* Footer */
 
@@ -2262,6 +2277,19 @@
 			}
 
 	}
+
+    @media screen and (max-width: 1024px) {
+
+        #banner {
+            padding: 4.5em 4.5em 4.5em 4.5em;
+            min-height: 400px;
+        }
+
+        #innerbox {
+            width: 90%;
+        }
+
+    }
 
 /* Medium */
 
@@ -2389,11 +2417,20 @@
 					margin: 2em 0 0 0;
 				}
 
+                #banner ul li {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
 				#banner .button.icon:before {
 					position: relative;
 					right: auto;
 					top: auto;
 				}
+
+                #innerbox {
+                    width: 100%;
+                }
 
 		/* Content */
 

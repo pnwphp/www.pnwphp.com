@@ -26,10 +26,8 @@
 
     <!-- Banner -->
     <div id="banner-wrapper">
-        <div id="banner" class="box container">
-            <div class="row">
-                @yield('banner')
-            </div>
+        <div id="banner">
+            @yield('banner')
         </div>
     </div>
 
