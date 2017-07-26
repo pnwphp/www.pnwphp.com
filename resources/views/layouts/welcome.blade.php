@@ -27,7 +27,11 @@
     <!-- Banner -->
     <div id="banner-wrapper">
         <div id="banner">
-            @yield('banner')
+            <div class="container">
+                <div id="innerbox">
+                    @yield('banner')
+                </div>
+            </div>
         </div>
     </div>
 
