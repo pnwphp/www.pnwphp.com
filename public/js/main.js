@@ -37,11 +37,11 @@
 			});
 
 		// Dropdowns.
-			$('#nav > ul').dropotron({
-				mode: 'fade',
-				noOpenerFade: true,
-				speed: 300
-			});
+		//	$('#nav > ul').dropotron({
+		//		mode: 'fade',
+		//		noOpenerFade: true,
+		//		speed: 300
+		//	});
 
 		// Off-Canvas Navigation.
 

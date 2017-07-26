@@ -24,6 +24,12 @@
         </header>
     </div>
 
+    <div id="subnavigation">
+        <div class="container">
+            @include('partials.subnav')
+        </div>
+    </div>
+
     <!-- Banner -->
     <div id="banner-wrapper">
         <div id="banner">
@@ -87,7 +93,7 @@
 <script src="{{ asset('js/skel.min.js') }}"></script>
 <script src="{{ asset('js/util.js') }}"></script>
 <!--[if lte IE 8]><script src="{{ asset('js/ie/respond.min.js') }}"></script><![endif]-->
-<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/main.js') }}?v=201707261335"></script>
 
 </body>
 </html>
