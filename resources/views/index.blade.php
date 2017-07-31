@@ -1,16 +1,12 @@
 @extends('layouts.welcome')
 
 @section('banner')
-    <div class="7u 12u(medium)">
-        <h2>Pacific Northwest PHP</h2>
-        <h4>September 7th - 9th @ Washington University's Kane Hall</h4>
-        <p>Seattle's annual PHP community conference</p>
-    </div>
-    <div class="5u 12u(medium)">
-        <ul>
-            @include('partials.action-button')
-        </ul>
-    </div>
+    <h2>Pacific Northwest PHP</h2>
+    <h4>September 7th - 9th @ Washington University's Kane Hall</h4>
+    <p>Seattle's annual PHP community conference</p>
+    <ul>
+        @include('partials.action-button')
+    </ul>
 @endsection
 
 @section('features')

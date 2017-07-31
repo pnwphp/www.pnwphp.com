@@ -19,6 +19,12 @@
         </header>
     </div>
 
+    <div id="subnavigation">
+        <div class="container">
+            @include('partials.subnav')
+        </div>
+    </div>
+
     <!-- Main -->
     <div id="alt-main-wrapper">
         <div class="container">
