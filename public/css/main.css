@@ -2738,6 +2738,10 @@
 				padding: 40px 30px 40px 30px;
 			}
 
+			#alt-main-wrapper {
+				padding: 2.5em;
+			}
+
 		/* Logo */
 
 			#logo h1 {
@@ -2792,6 +2796,14 @@
 
 			#copyright {
 				text-align: left;
+			}
+
+			#footer .links h3 {
+				padding: 0;
+				margin: 0;
+			}
+			#footer .links h3 br {
+				display: none;
 			}
 
 	}
