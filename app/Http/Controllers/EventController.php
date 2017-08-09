@@ -7,6 +7,8 @@ use App\Models\Talk;
 
 class EventController extends Controller
 {
+    const TICKETS_URL = 'https://www.eventbrite.com/e/pacific-northwest-php-conference-2017-pnwphp-tickets-36005273743';
+
     public function __construct()
     {
         \View::share('current', 'event');
@@ -125,5 +127,10 @@ class EventController extends Controller
                 'alt' => "Auditorium interior from the center of the presentation area and focused up the 440 empty seats to the read wall of the auditorium."
             ]
         ];
+    }
+
+    public function tickets()
+    {
+        return redirect(self::TICKETS_URL);
     }
 }

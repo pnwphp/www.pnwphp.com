@@ -1458,7 +1458,7 @@
 		background-size: 100% 30em, auto;
 		font-family: 'Open Sans', sans-serif;
 		font-size: 13pt;
-		color: #696969;
+		color: #3a3a3a;
 		font-weight: 300;
 		line-height: 2.25em;
 	}
@@ -2110,7 +2110,7 @@
 	}
 
 	#subnavigation {
-		background-color: #d7d7d7;
+		background-color: #3A649D;
 		width: 100%;
 		margin-top: -15px; /* WTF? */
 	}
@@ -2123,21 +2123,23 @@
 		display: block;
 		line-height: 1.5em;
 		padding: 1em 2em 1em 2em;
-		color: #696969;
+		color: #fff;
 		text-decoration: none;
 		border: none;
 		font-size: 1.1em;
 	}
 
 	#nav-conference ul li a:hover {
-		background-color: #818181;
-		color: #FFFFFF;
+		background-color: #89A3D2;
 	}
 
 	#nav-conference ul li.current a {
-		font-weight: 800;
-		color: #696969;
-		background-color: #d7d7d7;
+		font-weight: 600;
+		background-color: #89A3D2;
+	}
+
+	#nav-conference ul li a.bold {
+		font-weight: 600;
 	}
 
 /* Banner */
@@ -2736,6 +2738,10 @@
 				padding: 40px 30px 40px 30px;
 			}
 
+			#alt-main-wrapper {
+				padding: 2.5em;
+			}
+
 		/* Logo */
 
 			#logo h1 {
@@ -2790,6 +2796,14 @@
 
 			#copyright {
 				text-align: left;
+			}
+
+			#footer .links h3 {
+				padding: 0;
+				margin: 0;
+			}
+			#footer .links h3 br {
+				display: none;
 			}
 
 	}
