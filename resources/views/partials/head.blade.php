@@ -28,6 +28,10 @@
         max-width: 400px;
         text-align: center;
     }
+
+    .box.feature .image {
+        padding: 0.5em;
+    }
 </style>
 
 <!-- Scripts -->
