@@ -15,7 +15,7 @@ class TalksTableSeeder extends Seeder
     public function run()
     {
         $days = [
-            'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
+            0,1,2,3,4
         ];
         foreach ($days as $day) {
             $start = rand(9,12);

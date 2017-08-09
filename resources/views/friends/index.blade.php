@@ -1,14 +1,14 @@
 @extends('layouts.welcome')
 
 @section('banner')
-    <div class="7u 12u(medium)">
+    <div class="12u(medium)">
         <h2>Event Friends</h2>
         <p>The Event Friends program is all about being proactive about community, and we need you to make it happen.</p>
     </div>
-    <div class="5u 12u(medium)">
+    <div class="12u(medium)">
         <ul>
             @include('partials.action-button')
-            <li><a href="{{ url('contact/Event%20Friends') }}" class="button button-green" style="margin-top:1em;">Connect with Us <i class="fa fa-umbrella"></i></a></li>
+            <li><a href="{{ url('contact/Event%20Friends') }}" class="button button-green">Connect with Us <i class="fa fa-umbrella"></i></a></li>
         </ul>
     </div>
 @endsection
@@ -72,7 +72,7 @@
     </ul>
     <ul>
         @include('partials.action-button')
-        <li><a href="{{ url('contact/Event%20Friends') }}" class="button button-green" style="margin-top:1em;">Connect with Us <i class="fa fa-umbrella"></i></a></li>
+        <li><a href="{{ url('contact/Event%20Friends') }}" class="button button-green">Connect with Us <i class="fa fa-umbrella"></i></a></li>
     </ul>
 @endsection
 

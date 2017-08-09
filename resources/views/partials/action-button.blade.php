@@ -10,3 +10,6 @@
 @if(config('app.soldout'))
     <li><a href="#" class="button disabled">Sold Out!</a></li>
 @endif
+@if(config('app.diversity_tickets'))
+    <li><a href="{{ config('app.diversity_tickets_url') }}" target="_blank" rel="noopener noreferrer" class="button button-green">Request a Diversity Ticket</a></li>
+@endif

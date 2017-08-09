@@ -7,6 +7,7 @@ use App\Models\Talk;
 
 class EventController extends Controller
 {
+
     public function __construct()
     {
         \View::share('current', 'event');
@@ -126,4 +127,5 @@ class EventController extends Controller
             ]
         ];
     }
+
 }

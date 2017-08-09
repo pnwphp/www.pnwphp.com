@@ -8,9 +8,9 @@
     <h3>Purpose</h3>
     <p><strong>The Pacific Northwest PHP Conference</strong> (PNW PHP) is a volunteer-run community event, and invites anyone with a desire to talk and learn about PHP and related technologies to gather together, share their knowledge, and promote the PHP community in the Seattle, WA, and Puget Sound area.</p>
 
-    <p><strong>PNW PHP aims to be inclusive</strong> to the largest number of contributors as possible. As such, we are committed to providing a friendly, safe, and welcoming environment for all, regardless of their professional or personal background including education, experience, age, ability, gender, sexual orientation, ethnicity, socioeconomic status, disability, physical appearance, or religion. We invite all those who participate in SeaPHP UG to help us in creating such an environment.</p>
+    <p><strong>PNW PHP aims to be inclusive</strong> to the largest number of contributors as possible. As such, we are committed to providing a friendly, safe, and welcoming environment for all, regardless of their professional or personal background including education, experience, age, ability, gender, sexual orientation, ethnicity, socioeconomic status, disability, physical appearance, or religion. We invite all those who participate in PNW PHP to help us in creating such an environment.</p>
 
-    <p><strong>This Code of Conduct (CoC) outlines the expectations of all who participate</strong>, as well as how we should respond to unacceptable behavior. We expect participants will abide by this CoC in all community venues—whether online or in-person—as well as in one-on-one communications in, around, or relating to the event.</p>
+    <p><strong>This Code of Conduct (CoC) outlines the expectations of all who participate</strong>, as well as how we should respond to unacceptable behavior. We expect participants will abide by this CoC in all community venues—whether online or in-person as well as in one-on-one communications in, around, or relating to the event.</p>
 @endsection
 
 @section('content')
@@ -19,12 +19,12 @@
     <strong>We are all expected to:</strong>
     <ul>
         <li><i class="fa fa-check-square-o"></i> Behave professionally.</li>
-        <li><i class="fa fa-check-square-o"></i> Exercise consideration and respect in your speech and actions.</li>
+        <li><i class="fa fa-check-square-o"></i> Exercise consideration and respect in our speech and actions.</li>
         <li><i class="fa fa-check-square-o"></i> Attempt collaboration before conflict.</li>
         <li><i class="fa fa-check-square-o"></i> Refrain from any unacceptable behavior.</li>
     </ul>
 
-    <p><strong>Unacceptable behaviors include:</strong> intimidating, harassing, abusive, discriminatory, derogatory, or demeaning speech or actions by any participant in our group. Community event venues may be shared with members of the public; please be respectful to all patrons of these locations.</p>
+    <p><strong>Unacceptable behaviors include:</strong> intimidating, harassing, abusive, discriminatory, derogatory, or demeaning speech or actions by any participant. Community event venues may be shared with members of the public; please be respectful to all patrons of these locations.</p>
 
     <p><strong>Harassment includes:</strong> harmful or prejudicial verbal or written comments related to gender, sexual orientation, race, religion, disability; inappropriate use of nudity and/or sexual images in public spaces (including presentation slides); deliberate intimidation, stalking or following; harassing photography or recording; sustained disruption of talks or other events; inappropriate physical contact; and unwelcome sexual attention.</p>
 
@@ -65,7 +65,6 @@
     <br/>
     <h3>Attribution</h3>
     <p>The PNW PHP CoC is an extension of the SeaPHP User Group Code of Conduct.  While some of the SeaPHP CoC content is original, most of it is not.  We'd like to recognize the sources of some of the language and ideas for this CoC.</p>
-    While some of the content in this CoC is original, most of it is not. We'd like to recognize the sources of some of the language and ideas for this CoC.
 
     <ul>
         <li><i class="fa fa-thumb-tack"></i>

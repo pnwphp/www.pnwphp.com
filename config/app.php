@@ -155,6 +155,10 @@ return [
 
     'mailgun_email' => env('MAILGUN_TEST_EMAIL', 'email@example.com'),
 
+    'diversity_tickets' => env('DIVERSITY_TICKETS', 'Soon'),
+
+    'diversity_tickets_url' => env('DIVERSITY_TICKETS_URL', 'https://diversitytickets.org/'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

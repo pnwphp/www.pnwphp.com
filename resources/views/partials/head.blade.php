@@ -5,7 +5,7 @@
 
 <!-- Styles -->
 @section('styles')
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}?v=201708091634" rel="stylesheet">
     <!--[if lte IE 8]><link href="{{ asset('css/ie8.css') }}" rel="stylesheet"><![endif]-->
 @show
 
@@ -20,6 +20,13 @@
     }
     li {
         list-style: none;
+    }
+
+    .button {
+        margin-bottom: 0.5em;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
     }
 </style>
 
