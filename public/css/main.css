@@ -2110,7 +2110,7 @@
 	}
 
 	#subnavigation {
-		background-color: #d7d7d7;
+		background-color: #3A649D;
 		width: 100%;
 		margin-top: -15px; /* WTF? */
 	}
@@ -2123,21 +2123,19 @@
 		display: block;
 		line-height: 1.5em;
 		padding: 1em 2em 1em 2em;
-		color: #696969;
+		color: #fff;
 		text-decoration: none;
 		border: none;
 		font-size: 1.1em;
 	}
 
 	#nav-conference ul li a:hover {
-		background-color: #818181;
-		color: #FFFFFF;
+		background-color: #89A3D2;
 	}
 
 	#nav-conference ul li.current a {
-		font-weight: 800;
-		color: #696969;
-		background-color: #d7d7d7;
+		font-weight: 600;
+		background-color: #89A3D2;
 	}
 
 /* Banner */
