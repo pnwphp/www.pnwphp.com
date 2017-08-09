@@ -24,4 +24,9 @@
                 Hotel
         </a>
     </li>
+    <li>
+        <a href="{{ url('tickets') }}" class="bold">
+            Tickets
+        </a>
+    </li>
 </ul>

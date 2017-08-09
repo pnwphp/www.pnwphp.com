@@ -1458,7 +1458,7 @@
 		background-size: 100% 30em, auto;
 		font-family: 'Open Sans', sans-serif;
 		font-size: 13pt;
-		color: #696969;
+		color: #3a3a3a;
 		font-weight: 300;
 		line-height: 2.25em;
 	}
@@ -2136,6 +2136,10 @@
 	#nav-conference ul li.current a {
 		font-weight: 600;
 		background-color: #89A3D2;
+	}
+
+	#nav-conference ul li a.bold {
+		font-weight: 600;
 	}
 
 /* Banner */
