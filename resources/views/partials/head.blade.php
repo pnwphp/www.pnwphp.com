@@ -21,6 +21,13 @@
     li {
         list-style: none;
     }
+
+    .button {
+        margin-bottom: 0.5em;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
 </style>
 
 <!-- Scripts -->

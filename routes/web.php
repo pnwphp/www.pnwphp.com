@@ -23,7 +23,6 @@ Route::get('venue/album', 'EventController@venueAlbum');
 Route::get('venue/getting-here', 'EventController@gettingHere');
 Route::get('hotel', 'EventController@hotel');
 Route::get('coc', 'EventController@coc');
-Route::get('tickets', 'EventController@tickets');
 
 Route::group(
     ['prefix' => 'friends/' ], function () {

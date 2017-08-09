@@ -25,7 +25,7 @@
         </a>
     </li>
     <li>
-        <a href="{{ url('tickets') }}" class="bold">
+        <a href="{{ config('app.registration_url') }}" target="_blank" class="bold">
             Tickets
         </a>
     </li>

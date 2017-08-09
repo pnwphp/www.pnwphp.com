@@ -27,5 +27,7 @@
     <p>This year we are looking forward to bringing together the rich and diverse talent of our community as speakers and attendees to share knowledge and inspiration.</p>
     <p>We will dive deep into understanding technology, tools, and processes we all rely on, and explore a wide range technology and processes we are eager to get to know.</p>
 
-    @include('partials.action-button')
+    <ul>
+        @include('partials.action-button')
+    </ul>
 @endsection

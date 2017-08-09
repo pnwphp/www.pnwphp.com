@@ -7,7 +7,6 @@ use App\Models\Talk;
 
 class EventController extends Controller
 {
-    const TICKETS_URL = 'https://www.eventbrite.com/e/pacific-northwest-php-conference-2017-pnwphp-tickets-36005273743';
 
     public function __construct()
     {
@@ -129,8 +128,4 @@ class EventController extends Controller
         ];
     }
 
-    public function tickets()
-    {
-        return redirect(self::TICKETS_URL);
-    }
 }

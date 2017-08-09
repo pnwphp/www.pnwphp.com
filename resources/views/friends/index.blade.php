@@ -8,7 +8,7 @@
     <div class="12u(medium)">
         <ul>
             @include('partials.action-button')
-            <li><a href="{{ url('contact/Event%20Friends') }}" class="button button-green" style="margin-top:1em;">Connect with Us <i class="fa fa-umbrella"></i></a></li>
+            <li><a href="{{ url('contact/Event%20Friends') }}" class="button button-green">Connect with Us <i class="fa fa-umbrella"></i></a></li>
         </ul>
     </div>
 @endsection
@@ -72,7 +72,7 @@
     </ul>
     <ul>
         @include('partials.action-button')
-        <li><a href="{{ url('contact/Event%20Friends') }}" class="button button-green" style="margin-top:1em;">Connect with Us <i class="fa fa-umbrella"></i></a></li>
+        <li><a href="{{ url('contact/Event%20Friends') }}" class="button button-green">Connect with Us <i class="fa fa-umbrella"></i></a></li>
     </ul>
 @endsection
 
