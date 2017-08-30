@@ -1896,6 +1896,7 @@
 
 			.box.feature h2 {
 				font-size: 1.35em;
+				line-height: 1.4em;
 			}
 
 			.box.feature p {
@@ -1916,8 +1917,7 @@
 			}
 
             .box.feature .image img {
-                border-bottom-left-radius: 0;
-                border-bottom-right-radius: 0;
+                border-radius: 0;
                 margin-left: auto;
                 margin-right: auto;
             }

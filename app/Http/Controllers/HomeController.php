@@ -16,9 +16,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // 3 random Speakers
+        // random Speakers
         // image, name, desc
-        $features = Talk::inRandomOrder()->take(3)->get();
+        $features = Talk::inRandomOrder()->take(8)->get();
         return view('index')->with(['features' => $features, 'current' => 'welcome']);
     }
 
