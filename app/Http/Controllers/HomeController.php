@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function getContact($subject = "PNWPHP Conference")
     {
-        return view('contact')->with('subject', $subject);
+        return view('contact')->with(['subject' => $subject, 'current' => 'contact']);
     }
 
     public function postContact(ContactRequest $request)
