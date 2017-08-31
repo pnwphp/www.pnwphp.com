@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Mail\Contacted;
 use App\Models\ContactForm;
+use App\Models\Sponsor;
 use App\Models\Talk;
 use Illuminate\Http\Request;
 use Mail;
@@ -19,7 +20,12 @@ class HomeController extends Controller
         // random Speakers
         // image, name, desc
         $features = Talk::inRandomOrder()->take(8)->get();
-        return view('index')->with(['features' => $features, 'current' => 'welcome']);
+        $sponsors = Sponsor::getActiveGroupedByTier();
+        return view('index')->with([
+            'features' => $features,
+            'current' => 'welcome',
+            'sponsors' => $sponsors
+        ]);
     }
 
     public function getContact($subject = "PNWPHP Conference")

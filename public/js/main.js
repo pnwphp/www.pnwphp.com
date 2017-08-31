@@ -123,4 +123,27 @@
 	$(window).resize(function(){
 		equalheight('#features-wrapper .feature');
 	});
+
+	/*** Sponsors rotation ***/
+	$('#sponsors .tier').each(function(){
+		var $tier = $(this);
+		var $sponsors = $tier.find('.sponsor');
+		$sponsors.first().show().addClass('active');
+
+		setInterval(function(){
+			if ($sponsors.length <= 1) {
+				return;
+			}
+
+			var $active = $tier.find('.sponsor.active');
+			var $next = $active.next();
+			$active.hide().removeClass('active');
+			if ($next.length == 0) {
+				$next = $sponsors.first();
+			}
+			$next.show(1000).addClass('active');
+		}, 5000);
+	});
+
+
 })(jQuery);
