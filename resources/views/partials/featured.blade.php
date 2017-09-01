@@ -1,8 +1,8 @@
-<div class="4u 12u(medium)">
+<div class="3u 12u(medium)">
 
     <!-- Box -->
     <section class="box feature">
-        <a href="#" class="image featured"><img src="{{ asset('storage/'.$feature->getImage()) }}" alt="" style="width:100%;"/></a>
+        <a href="{{ url('speakers') }}" class="image featured"><img src="{{ asset('storage/'.$feature->getImage()) }}" alt="" style="width:100%;"/></a>
         <div class="inner">
             <header>
                 <h2>{{ $feature['name'] }}</h2>
@@ -10,7 +10,7 @@
                 <p>--{{ $speaker->name }}</p>
                 @endforeach
             </header>
-            <p>{{ $feature['desc'] }}</p>
+{{--            <p>{{ $feature['desc'] }}</p>--}}
         </div>
     </section>
 

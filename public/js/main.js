@@ -80,4 +80,70 @@
 
 	});
 
+	/**
+	 * Responsive equal height divs
+	 * Source: https://codepen.io/micahgodbolt/pen/FgqLc
+	 */
+	equalheight = function(container){
+
+		var currentTallest = 0,
+			currentRowStart = 0,
+			rowDivs = new Array(),
+			$el,
+			topPosition = 0;
+		$(container).each(function() {
+
+			$el = $(this);
+			$($el).height('auto')
+			topPostion = $el.position().top;
+
+			if (currentRowStart != topPostion) {
+				for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+					rowDivs[currentDiv].height(currentTallest);
+				}
+				rowDivs.length = 0; // empty the array
+				currentRowStart = topPostion;
+				currentTallest = $el.height();
+				rowDivs.push($el);
+			} else {
+				rowDivs.push($el);
+				currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+			}
+			for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+				rowDivs[currentDiv].height(currentTallest);
+			}
+		});
+	};
+
+	$(window).load(function() {
+		equalheight('#features-wrapper .feature');
+	});
+
+
+	$(window).resize(function(){
+		equalheight('#features-wrapper .feature');
+	});
+
+	/*** Sponsors rotation ***/
+	$('#sponsors .tier').each(function(){
+		var $tier = $(this);
+		var $sponsors = $tier.find('.sponsor');
+		$sponsors.first().show().addClass('active');
+
+		setInterval(function(){
+			if ($sponsors.length <= 1) {
+				return;
+			}
+
+			var $active = $tier.find('.sponsor.active');
+			var $next = $active.next();
+			$active.hide().removeClass('active');
+			if ($next.length == 0) {
+				$next = $sponsors.first();
+			}
+			$next.show(1000).addClass('active');
+		}, 5000);
+	});
+
+
 })(jQuery);
