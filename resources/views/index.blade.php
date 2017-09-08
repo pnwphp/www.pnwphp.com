@@ -15,6 +15,12 @@
     @endforeach
 @endsection
 
+@section('features-button')
+    <div class="center">
+        <a href="{{ url('speakers') }}" class="button button-medium">See all speakers</a>
+    </div>
+@endsection
+
 @section('main-sidebar')
         <div id="twitter-stream">
             <a class="twitter-timeline" data-height="480" href="https://twitter.com/PNWPHP">Tweets by PNWPHP</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -30,4 +36,21 @@
     <ul>
         @include('partials.action-button')
     </ul>
+@endsection
+
+@section('sponsors')
+    @foreach($sponsors as $tier => $tierSponsors)
+        @if (count($tierSponsors))
+            <div class="4u 12u(medium) tier">
+                <h3>{{ $tier }}</h3>
+                @foreach($tierSponsors as $sponsor)
+                    <div class="sponsor">
+                        <a href="{{ $sponsor->website }}" class="feature-link" target="_blank" rel="noopener noreferrer" title="{{{ $sponsor->name }}}">
+                            <img src="{{ asset('storage/'.$sponsor->image) }}" alt="{{{ $sponsor->name }}}" class="image sponsor-image" />
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        @endif
+    @endforeach
 @endsection

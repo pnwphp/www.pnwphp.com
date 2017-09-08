@@ -112,3 +112,7 @@ Route::group(
 	Route::get('speakers', 'ApiController@speakers');
 	Route::get('sponsors', 'ApiController@sponsors');
 });
+
+Route::get('slack', function () {
+	return redirect('https://join.slack.com/t/pnwphp2017/shared_invite/MjM0NTcxNDU5NTg3LTE1MDQyMDMxMzQtZTI0NGU5YTU3Ng');
+});

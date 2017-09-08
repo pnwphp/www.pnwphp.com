@@ -5,7 +5,7 @@
 
 <!-- Styles -->
 @section('styles')
-    <link href="{{ asset('css/main.css') }}?v=201708091634" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}?v=201708311522" rel="stylesheet">
     <!--[if lte IE 8]><link href="{{ asset('css/ie8.css') }}" rel="stylesheet"><![endif]-->
 @show
 

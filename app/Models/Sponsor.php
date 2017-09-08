@@ -41,4 +41,28 @@ class Sponsor extends Model
         }
         return $simpleArray;
     }
+
+    public static function getActiveGroupedByTier()
+    {
+        return [
+            'platinum' => Sponsor::where('level', 'platinum')
+                ->where('active', true)
+                ->get(),
+            'gold' => Sponsor::where('level', 'gold')
+                ->where('active', true)
+                ->get(),
+            'silver' => Sponsor::where('level', 'silver')
+                ->where('active', true)
+                ->get(),
+            'bronze' => Sponsor::where('level', 'bronze')
+                ->where('active', true)
+                ->get(),
+            'copper' => Sponsor::where('level', 'copper')
+                ->where('active', true)
+                ->get(),
+            'community' => Sponsor::where('level', 'community')
+                ->where('active', true)
+                ->get(),
+        ];
+    }
 }
