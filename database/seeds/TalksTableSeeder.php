@@ -14,27 +14,22 @@ class TalksTableSeeder extends Seeder
      */
     public function run()
     {
-        $days = [
-            0,1,2,3,4
-        ];
-        foreach ($days as $day) {
-            $start = rand(9,12);
-            for($i = $start; $i < 20; $i += rand(1,2)) {
-                if (rand(0,1)) {
-                    factory(App\Models\Talk::class)->create([
-                        'day' => $day,
-                        'start_time' => $i.':00',
-                        'end_time' => $i+1 . ':00'
-                    ]);
-                } else {
-                    factory(App\Models\Event::class)->create([
-                        'day' => $day,
-                        'start_time' => $i.':00',
-                        'end_time' => $i+1 . ':00'
-                    ]);
-                }
-            }
+        $eventsList = [];
+
+        for ($i = 0; $i < 30; $i++) {
+            do {
+                $day = rand(0, 4);
+                $startHour = rand(9, 20);
+            } while (isset($eventsList[$day . '-' . $startHour]));
+            $eventsList[$day . '-' . $startHour] = true;
+
+            factory(rand(0,1) ? App\Models\Talk::class : App\Models\Event::class)->create([
+                'day' => $day,
+                'start_time' => $startHour.':00',
+                'end_time' => $startHour + 1 . ':00'
+            ]);
         }
+
         $talks = Talk::all();
         $speakerCount = [1,1,1,1,1,2,3];
         foreach ($talks as $talk) {
