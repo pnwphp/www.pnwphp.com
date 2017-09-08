@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\HasStartTime;
 use App\Models\Talk;
 
 class EventController extends Controller
@@ -36,7 +37,9 @@ class EventController extends Controller
             $events = $this->sortByStartTime($events, 'events');
 
             $today = array_merge($talks, $events);
-            asort($today);
+            uasort($today, function(HasStartTime $a, HasStartTime $b) {
+                return $a->getStartsAt() <=> $b->getStartsAt();
+            });
             $schedule[$name] = $today;
         }
         return view('event.schedule')->with([ 'schedule' => $schedule ]);
