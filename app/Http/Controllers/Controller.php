@@ -50,7 +50,7 @@ class Controller extends BaseController
     ];
 
     public $days = [
-        'Wednesday', 'Thursday Room 111', 'Thursday Room 178', 'Friday', 'Saturday'
+        'Wednesday', 'Thursday Room 111', 'Thursday Room 178', 'Friday', 'Saturday', 'Sunday'
     ];
 
     public $designations = [
