@@ -31,4 +31,11 @@ trait DateFixer {
 		}
 		return '2000-01-01';
 	}
+
+    public function getStartsAt() : \DateTimeInterface
+    {
+        return \DateTimeImmutable::createFromFormat('Y-m-d H:i:s',
+            $this->getDate() . ' ' . $this->start_time . ':00',
+            new \DateTimeZone('America/Los_Angeles'));
+    }
 }

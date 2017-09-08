@@ -2,7 +2,7 @@
 
 use App\Models\Api\DateFixer;
 
-class Talk extends BaseModel
+class Talk extends BaseModel implements HasStartTime
 {
 	use DateFixer;
     protected $fillable = [ 'name', 'desc', 'designation', 'category', 'level', 'start_time', 'end_time', 'day' ];
